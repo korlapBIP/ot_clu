@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>Laporan Lembur Unit Cleaning Umum</title>
+  <style>
+    :root{
+      --bg:#eef3f9;--panel:#ffffff;--ink:#172033;--muted:#65758b;--line:#d9e3f1;--line-strong:#bdcbe0;
+      --primary:#2558d9;--primary-2:#163f9f;--success:#15803d;--danger:#c0392b;--warning:#b7791f;
+      --shadow:0 18px 45px rgba(20,38,72,.11);--radius:22px;
+      --worker-bg:#f2f8ff;--worker-accent:#2558d9;--data-bg:#f3fbf6;--data-accent:#15803d;--report-bg:#fff8ed;--report-accent:#d97706;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at top left,#dfeaff 0,#f6f9fd 340px,var(--bg) 100%);color:var(--ink)}
+    body{padding:16px 12px 38px}.wrap{max-width:1180px;margin:0 auto}
+    .hero{background:linear-gradient(135deg,#11285f 0%,#2558d9 58%,#65a2ff 100%);color:#fff;border-radius:30px;padding:26px 22px;box-shadow:0 22px 48px rgba(37,88,217,.25);position:relative;overflow:hidden;margin-bottom:18px}
+    .hero:after,.hero:before{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.09)}.hero:after{right:-45px;top:-45px;width:180px;height:180px}.hero:before{right:70px;bottom:-65px;width:150px;height:150px}
+    .hero h1{margin:0 0 7px;font-size:26px;font-weight:900;letter-spacing:.2px;position:relative;z-index:1}.hero p{margin:0;max-width:790px;color:rgba(255,255,255,.92);font-size:14px;line-height:1.58;position:relative;z-index:1}
+    .hero-brand{display:flex;align-items:center;gap:16px;margin-bottom:14px;position:relative;z-index:1}.hero-logo{width:68px;height:68px;border-radius:18px;background:rgba(255,255,255,.96);padding:8px;box-shadow:0 12px 28px rgba(12,28,69,.22);object-fit:contain;flex:0 0 auto}.hero-brand-text{display:flex;flex-direction:column;gap:4px}.hero-brand-text small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.74);font-weight:900}.hero-brand-text strong{font-size:19px;line-height:1.2;color:#fff;font-weight:900}
+    .hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px;position:relative;z-index:1}.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);padding:9px 13px;border-radius:999px;font-size:13px;font-weight:800}
+    .app-splash{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at top left,#d5e4ff 0,#edf4ff 28%,#f5f8fe 62%,#e8f0ff 100%);z-index:9999;transition:opacity .45s ease,visibility .45s ease;overflow:hidden}.app-splash.hide{opacity:0;visibility:hidden}.app-splash-orb{position:absolute;border-radius:50%;filter:blur(8px);opacity:.72;animation:floatOrb 7s ease-in-out infinite}.app-splash-orb.a{width:220px;height:220px;left:-50px;top:-40px;background:rgba(37,88,217,.18)}.app-splash-orb.b{width:190px;height:190px;right:-35px;top:90px;background:rgba(16,185,129,.12);animation-delay:-2s}.app-splash-orb.c{width:160px;height:160px;right:12%;bottom:-40px;background:rgba(245,158,11,.12);animation-delay:-4s}.app-splash-card{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;min-width:min(90vw,390px);padding:34px 28px 28px;border-radius:34px;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.9));border:1px solid rgba(188,202,221,.75);box-shadow:0 28px 68px rgba(20,38,72,.18), inset 0 1px 0 rgba(255,255,255,.75);backdrop-filter:blur(10px)}.app-splash-card::before{content:'';position:absolute;inset:1px;pointer-events:none;border-radius:33px;border:1px solid rgba(255,255,255,.55)}.app-splash-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(37,88,217,.08);color:#2558d9;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.app-splash-kicker::before{content:'';width:8px;height:8px;border-radius:50%;background:#2558d9;box-shadow:0 0 0 6px rgba(37,88,217,.14)}.app-splash-logo-shell{position:relative;width:142px;height:142px;display:flex;align-items:center;justify-content:center}.app-splash-logo-ring{position:absolute;inset:0;border-radius:40px;background:conic-gradient(from 0deg,#2558d9,#65a2ff,#7dd3fc,#2558d9);filter:drop-shadow(0 14px 22px rgba(37,88,217,.22));animation:spin 6s linear infinite}.app-splash-logo-ring::after{content:'';position:absolute;inset:10px;border-radius:34px;background:rgba(255,255,255,.98)}.app-splash-logo{position:relative;z-index:1;width:96px;height:96px;object-fit:contain;border-radius:28px;background:#fff;padding:8px;box-shadow:0 12px 22px rgba(37,88,217,.12)}.app-splash-title{font-size:28px;font-weight:900;color:#20355b;text-align:center;letter-spacing:.2px}.app-splash-sub{max-width:310px;font-size:13px;font-weight:800;color:#64748b;text-align:center;line-height:1.65}.app-splash-progress{width:min(82%,290px);height:10px;border-radius:999px;background:#dce8ff;overflow:hidden;box-shadow:inset 0 1px 2px rgba(20,38,72,.08)}.app-splash-progress span{display:block;width:42%;height:100%;border-radius:999px;background:linear-gradient(90deg,#2558d9,#65a2ff,#8bc5ff);animation:progressMove 1.5s ease-in-out infinite}.app-splash-foot{font-size:12px;font-weight:900;color:#8292aa;letter-spacing:.12em;text-transform:uppercase;text-align:center}.install-sheet{position:fixed;left:50%;bottom:16px;transform:translateX(-50%) translateY(18px);width:min(94vw,460px);z-index:80;opacity:0;pointer-events:none;transition:.28s ease}.install-sheet.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}.install-sheet-card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,255,.98));border:1px solid rgba(188,202,221,.8);box-shadow:0 22px 48px rgba(20,38,72,.16);border-radius:24px;padding:18px 18px 16px;backdrop-filter:blur(10px)}.install-sheet-top{display:flex;gap:14px;align-items:center}.install-sheet-logo{width:56px;height:56px;object-fit:contain;border-radius:18px;background:#fff;padding:6px;box-shadow:0 10px 18px rgba(37,88,217,.12);flex:0 0 auto}.install-sheet-text small{display:block;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#2558d9;margin-bottom:4px}.install-sheet-text strong{display:block;font-size:18px;line-height:1.2;color:#20355b}.install-sheet-text p{margin:6px 0 0;color:#64748b;font-size:12px;line-height:1.55;font-weight:700}.install-points{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 12px}.install-point{background:#f6f9ff;border:1px solid #dde8fb;border-radius:16px;padding:11px 12px;font-size:12px;color:#3d4f6a;font-weight:800}.install-point b{display:block;font-size:13px;color:#20355b;margin-bottom:3px}.install-sheet-actions{display:flex;gap:10px}.install-sheet-actions .btn{flex:1}.install-sheet-close{position:absolute;right:14px;top:14px;width:32px;height:32px;border-radius:12px;border:1px solid #d7e3f7;background:#fff;color:#50647f;font-weight:900;cursor:pointer}.report-brand{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;margin-bottom:12px}.report-brand-logo-wrap{width:86px;height:86px;border-radius:24px;background:linear-gradient(180deg,#ffffff,#f5f9ff);border:1px solid #dbe6f7;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(37,88,217,.10)}.report-brand-logo{width:58px;height:58px;object-fit:contain}.report-brand-label{font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#6b7f9d}.app-inline-install{display:none}.app-inline-install.show{display:inline-flex}@keyframes spin{to{transform:rotate(360deg)}}@keyframes progressMove{0%{transform:translateX(-70%)}50%{transform:translateX(90%)}100%{transform:translateX(230%)}}@keyframes floatOrb{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.05)}}
+    .workspace{display:flex;flex-direction:column;gap:18px}.frame{border-radius:28px;padding:16px;border:1px solid rgba(188,202,221,.55);box-shadow:var(--shadow);position:relative;overflow:hidden}.frame:before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--frame-accent)}
+    .frame.worker{--frame-accent:var(--worker-accent);background:linear-gradient(135deg,#f7fbff 0%,var(--worker-bg) 100%)}.frame.data{--frame-accent:var(--data-accent);background:linear-gradient(135deg,#fbfffc 0%,var(--data-bg) 100%)}.frame.report-frame{--frame-accent:var(--report-accent);background:linear-gradient(135deg,#fffdf8 0%,var(--report-bg) 100%)}
+    .frame-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin:8px 4px 16px}.frame-kicker{font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:var(--frame-accent)}.frame-head h2{margin:3px 0 5px;font-size:22px;font-weight:900}.frame-head p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}.frame-number{width:42px;height:42px;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--frame-accent);font-weight:900;box-shadow:0 10px 24px rgba(20,38,72,.09);border:1px solid rgba(188,202,221,.55)}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}.data-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px}.report-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    .card{background:var(--panel);border:1px solid rgba(188,202,221,.66);border-radius:22px;box-shadow:0 10px 26px rgba(20,38,72,.08);overflow:hidden}.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 17px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#f9fbfe)}.card-head h2{margin:0;font-size:17px;font-weight:900}.card-head span{font-size:12px;color:var(--muted);font-weight:800}.card-body{padding:17px}
+    .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}label{font-size:13px;font-weight:900;color:#344256}.hint{font-size:11px;color:var(--muted);margin-top:-2px}
+    input,textarea,select{width:100%;border:1px solid var(--line);background:#f8fbff;border-radius:15px;padding:13px 14px;font-size:15px;color:var(--ink);outline:none;transition:.2s;border-bottom-width:2px}input:focus,textarea:focus,select:focus{background:#fff;border-color:#81a3ff;box-shadow:0 0 0 4px rgba(37,88,217,.10)}input[readonly]{background:#f1f5f9;color:#334155;font-weight:900}textarea{min-height:92px;resize:vertical}.rate-note{grid-column:1/-1;background:linear-gradient(180deg,#f0fdf4,#e9f9ef);border:1px solid rgba(21,128,61,.18);border-radius:17px;padding:13px 14px;color:#14532d;font-size:15px;font-weight:900}.rate-note span{color:#15803d}.calc-note{font-size:12px;color:#475569;font-weight:800;margin-top:2px}
+    .summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}.stat{background:linear-gradient(180deg,#fbfdff,#f4f8fd);border:1px solid var(--line);border-radius:17px;padding:14px}.stat .num{font-size:24px;font-weight:900;line-height:1;color:var(--primary)}.stat .lbl{margin-top:6px;font-size:12px;color:var(--muted);font-weight:800}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:17px}table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;font-size:14px}thead th{position:sticky;top:0;background:#eef4ff;color:#253553;font-weight:900;font-size:12px;letter-spacing:.3px;text-transform:uppercase;border-bottom:1px solid var(--line-strong);padding:12px 10px;text-align:left}tbody td{padding:12px 10px;border-bottom:1px solid #edf2f8;vertical-align:middle}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#fbfdff}.num-col{text-align:center;width:92px;white-space:nowrap}.name-col{min-width:190px}.control-col{width:150px;text-align:center}.worker-control{display:flex;gap:8px;justify-content:center}
+    .btn{appearance:none;border:0;border-radius:14px;padding:11px 14px;font-size:14px;font-weight:900;cursor:pointer;transition:transform .12s ease,box-shadow .2s ease,opacity .2s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{transform:translateY(-1px)}.btn:disabled{cursor:not-allowed;opacity:.45;transform:none;box-shadow:none}.btn.add{background:rgba(21,128,61,.12);color:var(--success);border:1px solid rgba(21,128,61,.18)}.btn.del{background:rgba(192,57,43,.10);color:var(--danger);border:1px solid rgba(192,57,43,.15)}.btn.primary{background:linear-gradient(180deg,var(--primary),var(--primary-2));color:#fff;box-shadow:0 10px 18px rgba(37,88,217,.22)}.btn.secondary{background:#eef3f9;color:#334155;border:1px solid var(--line)}.btn.warning{background:rgba(245,158,11,.12);color:#92400e;border:1px solid rgba(245,158,11,.25)}.btn.save{padding:14px 16px;font-size:16px;flex:2}.btn.reset{flex:1}.form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.form-actions .btn{flex:1;min-width:130px}.selected-pill{display:inline-flex;align-items:center;gap:8px;background:#fff5df;border:1px solid #ffe0a3;color:#a85e00;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:900}
+    .report-shell{background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:22px;padding:16px;display:flex;justify-content:flex-start;align-items:flex-start;overflow:auto;max-height:75vh;max-width:100%;-webkit-overflow-scrolling:touch}.report-sheet{background:#fff;border:1px solid #c7d3e6;border-radius:10px;overflow:hidden;box-shadow:0 8px 24px rgba(20,38,72,.08);width:100%;min-width:980px;max-width:none;display:inline-block}.report-header{padding:24px 18px 20px;text-align:center;background:linear-gradient(180deg,#f7faff,#edf4ff);border-bottom:1px solid #d8e4f4}.report-title{font-size:28px;font-weight:900;letter-spacing:.4px;margin:0;color:#20355b}.report-sub{font-size:17px;margin-top:8px;color:#4b607c;font-weight:900;letter-spacing:.4px}.report-info{display:grid;grid-template-columns:190px 1fr}.report-info div{padding:14px 16px;border-bottom:1px solid #d8e1ee;font-size:16px;line-height:1.45}.report-info .label{background:#f4f7fb;font-weight:900;color:#334155;border-right:1px solid #d8e1ee}.report-table{width:100%;border-collapse:collapse}.report-table th,.report-table td{border:1px solid #d7e0ec;padding:12px 10px;font-size:15px;line-height:1.45;color:#1f2937;vertical-align:top}.report-table th{background:#eef3ff;font-weight:900;font-size:14px;color:#334155}.report-table td:nth-child(1),.report-table td:nth-child(2),.report-table th:nth-child(1),.report-table th:nth-child(2){text-align:center}.report-table tbody tr:nth-child(even){background:#fbfdff}.empty{padding:20px!important;text-align:center;color:#64748b;font-weight:800;font-size:15px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}.help-note,.footer-note{margin-top:12px;color:var(--muted);font-size:12px;line-height:1.5}.footer-note{padding:12px 14px;border-radius:14px;background:#f8fbff;border:1px dashed #cfdcf1;color:#50647f}.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#172033;color:#fff;padding:12px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:.2s;z-index:20;box-shadow:0 10px 24px rgba(0,0,0,.25);font-size:13px;font-weight:800;max-width:92vw;text-align:center}.toast.show{opacity:1}
+    @media(max-width:920px){.two-col,.data-grid{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr 1fr}}
+    @media(max-width:560px){body{padding:10px 10px 28px}.hero{padding:20px 16px;border-radius:24px}.hero h1{font-size:21px}.hero-brand{gap:12px;align-items:flex-start}.hero-logo{width:58px;height:58px;border-radius:16px;padding:7px}.hero-brand-text strong{font-size:17px}.app-splash-card{padding:24px 18px 22px;border-radius:26px;min-width:min(92vw,380px)}.app-splash-logo-shell{width:118px;height:118px}.app-splash-logo{width:82px;height:82px;border-radius:22px}.app-splash-title{font-size:24px}.app-splash-kicker{font-size:11px;padding:8px 12px}.install-sheet{width:min(95vw,420px);bottom:12px}.install-sheet-card{padding:16px 14px 14px;border-radius:22px}.install-sheet-top{align-items:flex-start}.install-sheet-logo{width:52px;height:52px;border-radius:16px}.install-sheet-text strong{font-size:16px}.install-points{grid-template-columns:1fr}.install-sheet-actions{flex-direction:column}.report-brand-logo-wrap{width:72px;height:72px;border-radius:20px}.report-brand-logo{width:50px;height:50px}.frame{padding:13px;border-radius:24px}.frame-head{margin:8px 2px 14px}.frame-head h2{font-size:19px}.frame-number{width:38px;height:38px;border-radius:14px}.card-head,.card-body{padding:14px}.field-grid{grid-template-columns:1fr}.summary{grid-template-columns:1fr}.worker-control{flex-direction:column}.control-col{width:120px}.report-title{font-size:20px}.report-sub{font-size:13px}.report-info{grid-template-columns:120px 1fr}.report-info div{padding:11px 12px;font-size:13px}.report-table th,.report-table td{padding:9px 7px;font-size:12px}thead th,tbody td{padding:10px 8px;font-size:12px}.actions,.form-actions{flex-direction:column}.btn.save,.btn.reset,.form-actions .btn{width:100%}}
+
+    /* Mobile worker list: no horizontal scroll; Add/Del always visible */
+    @media(max-width:640px){
+      .table-wrap{overflow:visible;border:0;background:transparent}
+      #workerTable{display:block;width:100%;background:transparent;border-collapse:separate}
+      #workerTable thead{display:none}
+      #workerTable tbody{display:flex;flex-direction:column;gap:10px}
+      #workerTable tbody tr{display:grid;grid-template-columns:78px minmax(0,1fr);gap:8px 10px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:0 8px 18px rgba(20,38,72,.07)}
+      #workerTable tbody td{display:block;border-bottom:0;padding:0;font-size:14px}
+      #workerTable .num-col{width:auto;text-align:left;white-space:normal;font-weight:900;color:var(--primary)}
+      #workerTable .num-col::before{content:'No Absen';display:block;margin-bottom:3px;font-size:10px;letter-spacing:.35px;text-transform:uppercase;color:var(--muted);font-weight:900}
+      #workerTable .name-col{min-width:0;font-weight:800;color:#172033;overflow-wrap:anywhere}
+      #workerTable .name-col::before{content:'Nama Pekerja';display:block;margin-bottom:3px;font-size:10px;letter-spacing:.35px;text-transform:uppercase;color:var(--muted);font-weight:900}
+      #workerTable .control-col{grid-column:1/-1;width:100%;text-align:left;margin-top:4px}
+      #workerTable .control-col::before{content:'Control';display:block;margin-bottom:7px;font-size:10px;letter-spacing:.35px;text-transform:uppercase;color:var(--muted);font-weight:900}
+      #workerTable .worker-control{display:grid;grid-template-columns:1fr 1fr;gap:8px;justify-content:stretch}
+      #workerTable .worker-control .btn{width:100%;min-height:42px;padding:10px 12px}
+    }
+  </style>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2558d9">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Lembur">
+<meta name="description" content="Aplikasi PWA laporan lembur BiP untuk input pekerja, hitung durasi, dan kirim laporan ke WhatsApp.">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js');
+  });
+}
+</script>
+
+</head>
+<body>
+<div class="app-splash" id="appSplash">
+  <div class="app-splash-orb a"></div>
+  <div class="app-splash-orb b"></div>
+  <div class="app-splash-orb c"></div>
+  <div class="app-splash-card">
+    <div class="app-splash-kicker">BiP Productivity App</div>
+    <div class="app-splash-logo-shell">
+      <div class="app-splash-logo-ring" aria-hidden="true"></div>
+      <img src="icons/icon-512.png" alt="Logo aplikasi" class="app-splash-logo">
+    </div>
+    <div class="app-splash-title">Laporan Lembur</div>
+    <div class="app-splash-sub">Mempersiapkan dashboard, pekerja, dan form laporan agar siap digunakan.</div>
+    <div class="app-splash-progress" aria-hidden="true"><span></span></div>
+    <div class="app-splash-foot">Fast • Ringan • Siap Dipakai</div>
+  </div>
+</div>
+<div class="install-sheet" id="installSheet">
+  <div class="install-sheet-card">
+    <button type="button" class="install-sheet-close" id="btnDismissInstallTop" aria-label="Tutup">×</button>
+    <div class="install-sheet-top">
+      <img src="icons/icon-512.png" alt="Logo aplikasi" class="install-sheet-logo">
+      <div class="install-sheet-text">
+        <small>Install Android</small>
+        <strong>Laporan Lembur BiP</strong>
+        <p>Pasang aplikasi ke layar utama agar akses lebih cepat, tampilan penuh, dan terasa seperti aplikasi native.</p>
+      </div>
+    </div>
+    <div class="install-points">
+      <div class="install-point"><b>Akses Cepat</b>Icon langsung muncul di home screen Android.</div>
+      <div class="install-point"><b>Tampilan Penuh</b>Mode aplikasi lebih rapi tanpa address bar browser.</div>
+    </div>
+    <div class="install-sheet-actions">
+      <button class="btn primary" id="btnInstallApp">Install Sekarang</button>
+      <button class="btn secondary" id="btnDismissInstall">Nanti Saja</button>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-brand">
+      <img src="icons/icon-512.png" alt="Logo aplikasi" class="hero-logo">
+      <div class="hero-brand-text">
+        <strong>Laporan Lembur Unit Cleaning Umum</strong>
+      </div>
+    </div>
+    <h1>Laporan Lembur Unit Cleaning Umum</h1>
+    
+    <div class="hero-badges">
+      <div class="badge">1–2 Kelola Pekerja</div>
+      <div class="badge">3–4 Input Lembur</div>
+      <div class="badge">5 Form Laporan</div>
+      <button type="button" class="badge app-inline-install" id="btnInlineInstall">Install Android</button>
+    </div>
+  </section>
+
+  <main class="workspace">
+    <section class="frame worker">
+      <div class="frame-head">
+        <div><div class="frame-kicker">Frame 1</div><h2>Kelola Data Pekerja</h2></div>
+        <div class="frame-number">1–2</div>
+      </div>
+      <div class="two-col">
+        <section class="card">
+          <div class="card-head"><h2>1. Tambah Pekerja</h2><span>Input pekerja baru</span></div>
+          <div class="card-body">
+            <div class="field-grid">
+              <div class="field"><label for="newNo">No Absen</label><input id="newNo" type="text" inputmode="numeric" placeholder="Contoh: 1212"></div>
+              <div class="field"><label for="newNama">Nama Pekerja</label><input id="newNama" type="text" placeholder="Nama pekerja baru"></div>
+            </div>
+            <div class="form-actions">
+              <button class="btn primary" id="btnTambahPekerja">Tambah Pekerja</button>
+              <button class="btn secondary" id="btnClearTambah">Bersihkan</button>
+            </div>
+          </div>
+        </section>
+        <section class="card">
+          <div class="card-head"><h2>2. Edit / Hapus Pekerja</h2><span>Perbarui data pekerja</span></div>
+          <div class="card-body">
+            <div class="field-grid">
+              <div class="field full"><label for="editSelect">Pilih Pekerja</label><select id="editSelect"><option value="">Pilih pekerja yang akan diedit atau dihapus</option></select></div>
+              <div class="field"><label for="editNo">No Absen Baru</label><input id="editNo" type="text" inputmode="numeric" placeholder="No absen"></div>
+              <div class="field"><label for="editNama">Nama Baru</label><input id="editNama" type="text" placeholder="Nama pekerja"></div>
+            </div>
+            <div class="form-actions">
+              <button class="btn warning" id="btnUpdatePekerja">Simpan Edit</button>
+              <button class="btn del" id="btnDeletePekerja">Hapus Pekerja</button>
+              <button class="btn secondary" id="btnClearEdit">Batal Edit</button>
+            </div>
+            
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="frame data">
+      <div class="frame-head">
+        <div><div class="frame-kicker">Frame 2</div><h2>Input Data Lembur & Daftar Pekerja</h2></div>
+        <div class="frame-number">3–4</div>
+      </div>
+      <div class="data-grid">
+        <section class="card">
+          <div class="card-head"><h2>3. Data Lembur</h2><span>Lengkapi form dengan benar</span></div>
+          <div class="card-body">
+            <div class="field-grid">
+              <div class="rate-note">Nilai Lembur : <span>46.500 / Jam</span></div>
+              <div class="field"><label for="tanggal">Tanggal</label><input id="tanggal" type="date"></div>
+              <div class="field"><label for="kategori">Kategori</label><input id="kategori" type="text" value="Cleaning Umum" readonly></div>
+              <div class="field"><label for="jamAwal">Jam Awal</label><input id="jamAwal" type="text" inputmode="numeric" maxlength="5" placeholder="00:00"></div>
+              <div class="field"><label for="jamAkhir">Jam Akhir</label><input id="jamAkhir" type="text" inputmode="numeric" maxlength="5" placeholder="23:59"></div>
+              <div class="field"><label for="istirahat">Istirahat</label><select id="istirahat"><option value="0">0 Menit</option><option value="15">15 Menit</option><option value="30">30 Menit</option><option value="60">60 Menit</option><option value="90">90 Menit</option><option value="120">120 Menit</option></select></div>
+              <div class="field"><label for="durasiLembur">Hitung Durasi</label><input id="durasiLembur" type="text" value="0 Jam" readonly></div>
+              <div class="field full"><label for="upahLembur">Hitung Upah Lembur</label><input id="upahLembur" type="text" value="Rp 0" readonly></div>
+              <div class="field full"><label for="kegiatan">Kegiatan</label><textarea id="kegiatan" placeholder="Contoh: Bersih sarangan area silo"></textarea></div>
+            </div>
+          </div>
+        </section>
+        <section class="card">
+          <div class="card-head"><h2>4. Daftar Pekerja Lembur</h2><span id="selectedCountText">0 pekerja dipilih</span></div>
+          <div class="card-body">
+            <div class="summary">
+              <div class="stat"><div class="num" id="totalWorker">0</div><div class="lbl">Total Pekerja</div></div>
+              <div class="stat"><div class="num" id="selectedWorker">0</div><div class="lbl">Dipilih</div></div>
+              <div class="stat"><div class="num" id="remainingWorker">0</div><div class="lbl">Belum Dipilih</div></div>
+            </div>
+            <div class="table-wrap">
+              <table id="workerTable">
+                <thead><tr><th class="num-col">No Absen</th><th class="name-col">Nama Pekerja</th><th class="control-col">Control</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="frame report-frame">
+      <div class="frame-head">
+        <div><div class="frame-kicker">Frame 3</div><h2>5. FORM LAPORAN LEMBUR</h2></div>
+        <div class="frame-number">5</div>
+      </div>
+      <div class="report-grid">
+        <section class="card">
+          <div class="card-head"><h2>FORM LAPORAN LEMBUR</h2><div class="selected-pill" id="selectedPill">0 pekerja aktif</div></div>
+          <div class="card-body">
+            <div class="report-shell"><div id="report" class="report-sheet"></div></div>
+            <div class="actions">
+              <button class="btn primary save" id="btnSimpan">SIMPAN &amp; SHARE WA</button>
+              <button class="btn secondary reset" id="btnReset">RESET</button>
+            </div>
+            
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const defaultWorkers=[
+ ['1200','Matheus Umbu'],['1201','Pratama Reynaldi A'],['1202','Ari Febrianto'],['1203','M Arsyi Al Fazr'],
+ ['1204','M Akbarul Kafi'],['1205','Sudarsono'],['1206','Slamet Hariono'],['1207','Sunarto'],
+ ['1208','Alfian Fakhrijal A'],['1209','Dewo Panji S'],['1210','Yusuf Dwiki S'],['1211','Lauqul Machfudhi']
+].map(x=>({no:x[0],nama:x[1],selected:false}));
+
+let workers=loadWorkers();
+const qs=id=>document.getElementById(id);
+const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+const OVERTIME_RATE=46500;
+const appLogo=new Image();
+appLogo.src='icons/icon-512.png';
+let deferredInstallPrompt=null;
+let installSheetDismissed=false;
+
+function loadWorkers(){
+  try{
+    const saved=localStorage.getItem('laporanLemburWorkers');
+    if(saved){
+      const data=JSON.parse(saved);
+      if(Array.isArray(data) && data.length){
+        return data
+          .filter(w=>w && w.no !== undefined && w.nama !== undefined)
+          .map(w=>({no:String(w.no),nama:String(w.nama),selected:!!w.selected}));
+      }
+    }
+  }catch(e){}
+  return defaultWorkers.map(w=>({...w}));
+}
+
+function saveWorkers(){
+  localStorage.setItem('laporanLemburWorkers',JSON.stringify(workers));
+}
+
+function showToast(msg){
+  const t=qs('toast');
+  t.textContent=msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2400);
+}
+
+function isStandaloneMode(){
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;
+}
+
+function isAndroidDevice(){
+  return /Android/i.test(navigator.userAgent || '');
+}
+
+function canShowInstallUI(){
+  return isAndroidDevice() && !isStandaloneMode() && !installSheetDismissed;
+}
+
+function setInstallSheetVisible(show){
+  const sheet=qs('installSheet');
+  const inline=qs('btnInlineInstall');
+  if(sheet) sheet.classList.toggle('show', !!show);
+  if(inline) inline.classList.toggle('show', !!show);
+}
+
+function dismissInstallUI(remember=false){
+  if(remember){
+    localStorage.setItem('laporanLemburHideInstallPrompt','1');
+    installSheetDismissed=true;
+  }
+  setInstallSheetVisible(false);
+}
+
+async function triggerInstallPrompt(){
+  if(!deferredInstallPrompt){
+    showToast('Prompt install belum tersedia di browser ini.');
+    return;
+  }
+  try{
+    deferredInstallPrompt.prompt();
+    const choice=await deferredInstallPrompt.userChoice;
+    if(choice && choice.outcome==='accepted'){
+      showToast('Proses install aplikasi dimulai.');
+      dismissInstallUI(true);
+    }else{
+      showToast('Install dibatalkan.');
+    }
+  }catch(e){
+    showToast('Gagal membuka prompt install.');
+  } finally {
+    deferredInstallPrompt=null;
+  }
+}
+
+window.addEventListener('beforeinstallprompt', (event)=>{
+  event.preventDefault();
+  deferredInstallPrompt=event;
+  if(canShowInstallUI()) setInstallSheetVisible(true);
+});
+
+window.addEventListener('appinstalled', ()=>{
+  deferredInstallPrompt=null;
+  dismissInstallUI(true);
+  showToast('Aplikasi berhasil diinstall.');
+});
+
+appLogo.onload=()=>{
+  const report=qs('report');
+  if(report && report.innerHTML.trim()) renderReport();
+};
+
+function escapeHTML(value){
+  return String(value ?? '').replace(/[&<>'"]/g, c=>({
+    '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'
+  }[c]));
+}
+
+function formatDateID(value){
+  if(!value) return '-';
+  const parts=value.split('-').map(Number);
+  if(parts.length !== 3 || parts.some(Number.isNaN)) return value;
+  const date=new Date(parts[0], parts[1]-1, parts[2]);
+  if(Number.isNaN(date.getTime())) return value;
+  const days=['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+  const months=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+  const dd=String(date.getDate()).padStart(2,'0');
+  const yyyy=date.getFullYear();
+  return `${days[date.getDay()]} - ${dd} ${months[date.getMonth()]} ${yyyy}`;
+}
+
+function setTanggalHariIni(){
+  const today=new Date();
+  const yyyy=today.getFullYear();
+  const mm=String(today.getMonth()+1).padStart(2,'0');
+  const dd=String(today.getDate()).padStart(2,'0');
+  qs('tanggal').value=`${yyyy}-${mm}-${dd}`;
+}
+
+function formatRupiah(value){
+  const amount=Math.max(0, Math.round(Number(value) || 0));
+  return 'Rp '+amount.toLocaleString('id-ID');
+}
+
+function formatDuration(hours){
+  const safe=Math.max(0, Number(hours) || 0);
+  if(Number.isInteger(safe)) return `${safe} Jam`;
+  return `${safe.toLocaleString('id-ID',{minimumFractionDigits:2,maximumFractionDigits:2})} Jam`;
+}
+
+function parseTimeToMinutes(value){
+  if(!isValidTime(value)) return null;
+  const [h,m]=value.split(':').map(Number);
+  return (h*60)+m;
+}
+
+function getRestMinutes(){
+  return Number(qs('istirahat')?.value || 0);
+}
+
+function calculateOvertime(){
+  const start=parseTimeToMinutes(qs('jamAwal')?.value || '');
+  const end=parseTimeToMinutes(qs('jamAkhir')?.value || '');
+  const rest=getRestMinutes();
+  if(start === null || end === null){
+    return {minutes:0,hours:0,wage:0,rest};
+  }
+  let total=end-start;
+  if(total < 0) total += 24*60;
+  const minutes=Math.max(total-rest,0);
+  const hours=minutes/60;
+  return {minutes,hours,wage:hours*OVERTIME_RATE,rest};
+}
+
+function updateOvertimeCalculation(){
+  const calc=calculateOvertime();
+  if(qs('durasiLembur')) qs('durasiLembur').value=formatDuration(calc.hours);
+  if(qs('upahLembur')) qs('upahLembur').value=formatRupiah(calc.wage);
+}
+
+function selectedWorkers(){
+  return workers.filter(w=>w.selected);
+}
+
+function renderWorkers(){
+  const tbody=qs('workerTable').querySelector('tbody');
+  tbody.innerHTML='';
+
+  if(!workers.length){
+    tbody.innerHTML='<tr><td colspan="3" class="empty">Belum ada data pekerja.</td></tr>';
+  }else{
+    workers.forEach((w,index)=>{
+      const tr=document.createElement('tr');
+      tr.innerHTML=`
+        <td class="num-col">${escapeHTML(w.no)}</td>
+        <td class="name-col">${escapeHTML(w.nama)}</td>
+        <td class="control-col">
+          <div class="worker-control">
+            <button class="btn add" type="button" data-action="add" data-index="${index}" ${w.selected?'disabled':''}>Add</button>
+            <button class="btn del" type="button" data-action="del" data-index="${index}" ${!w.selected?'disabled':''}>Del</button>
+          </div>
+        </td>`;
+      tbody.appendChild(tr);
+    });
+  }
+
+  renderEditOptions();
+  renderSummary();
+  renderReport();
+}
+
+function renderEditOptions(){
+  const select=qs('editSelect');
+  const current=select.value;
+  select.innerHTML='<option value="">Pilih pekerja yang akan diedit atau dihapus</option>';
+  workers.forEach((w,index)=>{
+    const opt=document.createElement('option');
+    opt.value=String(index);
+    opt.textContent=`${w.no} - ${w.nama}`;
+    select.appendChild(opt);
+  });
+  if(current !== '' && workers[Number(current)]) select.value=current;
+}
+
+function renderSummary(){
+  const total=workers.length;
+  const selected=selectedWorkers().length;
+  qs('totalWorker').textContent=total;
+  qs('selectedWorker').textContent=selected;
+  qs('remainingWorker').textContent=Math.max(total-selected,0);
+  qs('selectedCountText').textContent=`${selected} pekerja dipilih`;
+  qs('selectedPill').textContent=`${selected} pekerja aktif`;
+}
+
+function renderReport(){
+  updateOvertimeCalculation();
+  const selected=selectedWorkers();
+  const tanggal=formatDateID(qs('tanggal').value);
+  const jamAwal=qs('jamAwal').value || '-';
+  const jamAkhir=qs('jamAkhir').value || '-';
+  const kegiatan=qs('kegiatan').value || '-';
+  const calc=calculateOvertime();
+  const durasi=formatDuration(calc.hours);
+  const upah=formatRupiah(calc.wage);
+  const totalUpah=formatRupiah(calc.wage * selected.length);
+  const istirahatLabel=`${calc.rest} Menit`;
+
+  const rows=selected.length
+    ? selected.map((w,i)=>`<tr><td>${i+1}</td><td>${escapeHTML(w.no)}</td><td>${escapeHTML(w.nama)}</td><td>${escapeHTML(kegiatan)}</td><td>${escapeHTML(upah)}</td></tr>`).join('')
+    : '<tr><td colspan="5" class="empty">Belum ada pekerja dipilih</td></tr>';
+
+  qs('report').innerHTML=`
+    <div class="report-header">
+      <div class="report-brand">
+        <div class="report-brand-logo-wrap"><img src="icons/icon-512.png" alt="Logo BiP" class="report-brand-logo"></div>
+        <div class="report-brand-label">BiP</div>
+      </div>
+      <div class="report-title">FORM LAPORAN LEMBUR</div>
+      <div class="report-sub">KEGIATAN CLEANING UMUM</div>
+    </div>
+    <div class="report-info">
+      <div class="label">Hari - Tanggal</div><div>${escapeHTML(tanggal)}</div>
+      <div class="label">Jam Awal</div><div>${escapeHTML(jamAwal)}</div>
+      <div class="label">Jam Akhir</div><div>${escapeHTML(jamAkhir)}</div>
+      <div class="label">Istirahat</div><div>${escapeHTML(istirahatLabel)}</div>
+      <div class="label">Durasi</div><div>${escapeHTML(durasi)}</div>
+      <div class="label">Nilai Lembur</div><div>Rp 46.500 / Jam</div>
+      <div class="label">Total Upah Lembur</div><div><strong>${escapeHTML(totalUpah)}</strong></div>
+      <div class="label">Kegiatan</div><div>${escapeHTML(kegiatan)}</div>
+    </div>
+    <table class="report-table">
+      <thead><tr><th style="width:60px">No</th><th style="width:120px">No Absen</th><th>Nama Pekerja</th><th>Kegiatan</th><th style="width:150px">Upah Lembur</th></tr></thead>
+      <tbody>${rows}</tbody>
+      <tfoot><tr><th colspan="4" style="text-align:right">Total Upah Lembur</th><th>${escapeHTML(totalUpah)}</th></tr></tfoot>
+    </table>`;
+}
+function setSelected(index, value){
+  if(!workers[index]) return;
+  workers[index].selected=value;
+  saveWorkers();
+  renderWorkers();
+}
+
+function clearTambah(){
+  qs('newNo').value='';
+  qs('newNama').value='';
+  qs('newNo').focus();
+}
+
+function clearEdit(){
+  qs('editSelect').value='';
+  qs('editNo').value='';
+  qs('editNama').value='';
+}
+
+function addWorker(){
+  const no=qs('newNo').value.trim();
+  const nama=qs('newNama').value.trim();
+  if(!no || !nama){
+    showToast('No absen dan nama pekerja wajib diisi.');
+    return;
+  }
+  if(workers.some(w=>w.no === no)){
+    showToast('No absen sudah ada.');
+    return;
+  }
+  workers.push({no,nama,selected:false});
+  workers.sort((a,b)=>String(a.no).localeCompare(String(b.no), 'id', {numeric:true}));
+  saveWorkers();
+  clearTambah();
+  renderWorkers();
+  showToast('Pekerja berhasil ditambahkan.');
+}
+
+function fillEditForm(){
+  const index=Number(qs('editSelect').value);
+  const w=workers[index];
+  if(!w){ clearEdit(); return; }
+  qs('editNo').value=w.no;
+  qs('editNama').value=w.nama;
+}
+
+function updateWorker(){
+  const index=Number(qs('editSelect').value);
+  const old=workers[index];
+  if(!old){
+    showToast('Pilih pekerja yang akan diedit.');
+    return;
+  }
+  const no=qs('editNo').value.trim();
+  const nama=qs('editNama').value.trim();
+  if(!no || !nama){
+    showToast('No absen dan nama baru wajib diisi.');
+    return;
+  }
+  if(workers.some((w,i)=>i !== index && w.no === no)){
+    showToast('No absen sudah dipakai pekerja lain.');
+    return;
+  }
+  workers[index]={...old,no,nama};
+  workers.sort((a,b)=>String(a.no).localeCompare(String(b.no), 'id', {numeric:true}));
+  saveWorkers();
+  clearEdit();
+  renderWorkers();
+  showToast('Data pekerja berhasil diperbarui.');
+}
+
+function deleteWorker(){
+  const index=Number(qs('editSelect').value);
+  const w=workers[index];
+  if(!w){
+    showToast('Pilih pekerja yang akan dihapus.');
+    return;
+  }
+  if(!confirm(`Hapus pekerja ${w.no} - ${w.nama}?`)) return;
+  workers.splice(index,1);
+  saveWorkers();
+  clearEdit();
+  renderWorkers();
+  showToast('Pekerja berhasil dihapus.');
+}
+
+function resetForm(){
+  if(!confirm('Reset input lembur dan pilihan pekerja?')) return;
+  setTanggalHariIni();
+  qs('jamAwal').value='';
+  qs('jamAkhir').value='';
+  qs('istirahat').value='0';
+  qs('kegiatan').value='';
+  updateOvertimeCalculation();
+  workers=workers.map(w=>({...w,selected:false}));
+  saveWorkers();
+  renderWorkers();
+  showToast('Input laporan sudah direset.');
+}
+
+function normalizeTimeInput(input){
+  let value=input.value.replace(/[^0-9]/g,'').slice(0,4);
+  if(value.length >= 3) value=value.slice(0,2)+':'+value.slice(2);
+  input.value=value;
+}
+
+function isValidTime(value){
+  if(!/^\d{2}:\d{2}$/.test(value)) return false;
+  const [h,m]=value.split(':').map(Number);
+  return h>=0 && h<=23 && m>=0 && m<=59;
+}
+
+function validateBeforeShare(){
+  if(!qs('tanggal').value){ showToast('Tanggal wajib diisi.'); return false; }
+  if(!isValidTime(qs('jamAwal').value)){ showToast('Jam awal harus format 24 jam, contoh 07:00.'); return false; }
+  if(!isValidTime(qs('jamAkhir').value)){ showToast('Jam akhir harus format 24 jam, contoh 18:30.'); return false; }
+  if(calculateOvertime().minutes <= 0){ showToast('Durasi lembur harus lebih dari 0 setelah dikurangi istirahat.'); return false; }
+  if(!qs('kegiatan').value.trim()){ showToast('Kegiatan wajib diisi.'); return false; }
+  if(!selectedWorkers().length){ showToast('Pilih minimal 1 pekerja.'); return false; }
+  return true;
+}
+
+function buildShareText(){
+  const selected=selectedWorkers();
+  const calc=calculateOvertime();
+  const lines=[];
+  lines.push('*LAPORAN LEMBUR*');
+  lines.push(`Hari - Tanggal : ${formatDateID(qs('tanggal').value)}`);
+  lines.push(`Jam : ${qs('jamAwal').value || '-'} s.d ${qs('jamAkhir').value || '-'}, Istirahat ${calc.rest} Menit`);
+  lines.push(`Durasi : ${formatDuration(calc.hours)}, Upah Lembur ${formatRupiah(calc.wage)}`);
+  lines.push('');
+  lines.push('*NIP PEKERJA*');
+
+  if(!selected.length){
+    lines.push('-');
+  }else{
+    selected.forEach(w=>lines.push(String(w.no)));
+  }
+
+  return lines.join('\n');
+}
+
+function wrapText(ctx,text,x,y,maxWidth,lineHeight){
+  const words=String(text || '-').split(/\s+/);
+  let line='';
+  let lines=[];
+  words.forEach(word=>{
+    const test=line ? line+' '+word : word;
+    if(ctx.measureText(test).width > maxWidth && line){
+      lines.push(line);
+      line=word;
+    }else{
+      line=test;
+    }
+  });
+  lines.push(line || '-');
+  lines.forEach((l,i)=>ctx.fillText(l,x,y+(i*lineHeight)));
+  return lines.length*lineHeight;
+}
+
+function roundedRect(ctx,x,y,w,h,r){
+  const radius=Math.min(r,w/2,h/2);
+  ctx.beginPath();
+  ctx.moveTo(x+radius,y);
+  ctx.arcTo(x+w,y,x+w,y+h,radius);
+  ctx.arcTo(x+w,y+h,x,y+h,radius);
+  ctx.arcTo(x,y+h,x,y,radius);
+  ctx.arcTo(x,y,x+w,y,radius);
+  ctx.closePath();
+}
+
+function reportToCanvas(){
+  const selected=selectedWorkers();
+  const scale=2;
+  const width=980;
+  const kegiatan=qs('kegiatan').value || '-';
+  const calc=calculateOvertime();
+  const upah=formatRupiah(calc.wage);
+  const totalUpah=formatRupiah(calc.wage * selected.length);
+
+  const tmp=document.createElement('canvas').getContext('2d');
+  tmp.font='18px Arial';
+  const kegiatanLines=Math.max(1, Math.ceil(tmp.measureText(kegiatan).width / 650));
+  const infoRows=8;
+  const kegiatanInfoHeight=Math.max(62, kegiatanLines*30 + 24);
+  const infoHeight=(52*(infoRows-1)) + kegiatanInfoHeight;
+  const rowHeights=(selected.length ? selected : [{no:'-',nama:'Belum ada pekerja dipilih'}]).map(()=>Math.max(58, kegiatanLines*24 + 18));
+  const headerHeight=188;
+  const height=headerHeight + infoHeight + 56 + rowHeights.reduce((a,b)=>a+b,0) + 58 + 92;
+
+  const canvas=document.createElement('canvas');
+  canvas.width=width*scale;
+  canvas.height=height*scale;
+  canvas.style.width=width+'px';
+  canvas.style.height=height+'px';
+  const ctx=canvas.getContext('2d');
+  ctx.scale(scale,scale);
+  ctx.fillStyle='#ffffff';
+  ctx.fillRect(0,0,width,height);
+
+  ctx.strokeStyle='#c7d3e6';
+  ctx.lineWidth=2;
+  ctx.strokeRect(24,24,width-48,height-48);
+
+  const headerGradient=ctx.createLinearGradient(0,25,0,25+headerHeight);
+  headerGradient.addColorStop(0,'#f8fbff');
+  headerGradient.addColorStop(1,'#ecf4ff');
+  ctx.fillStyle=headerGradient;
+  ctx.fillRect(25,25,width-50,headerHeight);
+  ctx.strokeStyle='#d8e4f4';
+  ctx.strokeRect(25,25,width-50,headerHeight);
+
+  roundedRect(ctx,width/2-44,42,88,88,24);
+  ctx.fillStyle='#ffffff';
+  ctx.fill();
+  ctx.strokeStyle='#dbe6f7';
+  ctx.stroke();
+  if(appLogo.complete && appLogo.naturalWidth){
+    ctx.drawImage(appLogo,width/2-29,56,58,58);
+  }
+
+  ctx.textAlign='center';
+  ctx.fillStyle='#6b7f9d';
+  ctx.font='bold 13px Arial';
+  ctx.fillText('BiP', width/2, 123);
+
+  ctx.fillStyle='#20355b';
+  ctx.font='bold 34px Arial';
+  ctx.fillText('FORM LAPORAN LEMBUR',width/2,151);
+  ctx.font='bold 22px Arial';
+  ctx.fillStyle='#4b607c';
+  ctx.fillText('KEGIATAN CLEANING UMUM',width/2,181);
+
+  let y=25+headerHeight;
+  const labelW=190;
+  const left=25;
+  const right=width-25;
+  const contentX=left+labelW;
+  const rows=[
+    ['Hari - Tanggal',formatDateID(qs('tanggal').value)],
+    ['Jam Awal',qs('jamAwal').value || '-'],
+    ['Jam Akhir',qs('jamAkhir').value || '-'],
+    ['Istirahat',`${calc.rest} Menit`],
+    ['Durasi',formatDuration(calc.hours)],
+    ['Nilai Lembur','Rp 46.500 / Jam'],
+    ['Total Upah Lembur',totalUpah],
+    ['Kegiatan',kegiatan]
+  ];
+
+  ctx.textAlign='left';
+  ctx.font='bold 18px Arial';
+  rows.forEach(([label,value],idx)=>{
+    const h=idx===7 ? kegiatanInfoHeight : 52;
+    ctx.fillStyle='#f4f7fb';
+    ctx.fillRect(left,y,labelW,h);
+    ctx.strokeStyle='#d8e1ee';
+    ctx.strokeRect(left,y,right-left,h);
+    ctx.beginPath(); ctx.moveTo(contentX,y); ctx.lineTo(contentX,y+h); ctx.stroke();
+    ctx.fillStyle='#334155';
+    ctx.fillText(label,left+16,y+32);
+    ctx.font='18px Arial';
+    ctx.fillStyle='#1f2937';
+    if(idx===7) wrapText(ctx,value,contentX+16,y+32,right-contentX-32,26);
+    else ctx.fillText(value,contentX+16,y+32);
+    ctx.font='bold 18px Arial';
+    y+=h;
+  });
+
+  const col=[58,110,245,342,175];
+  const headers=['No','No Absen','Nama Pekerja','Kegiatan','Upah Lembur'];
+  ctx.fillStyle='#eef3ff';
+  ctx.fillRect(left,y,right-left,56);
+  ctx.strokeStyle='#d7e0ec';
+  let x=left;
+  ctx.font='bold 16px Arial';
+  ctx.fillStyle='#334155';
+  headers.forEach((h,i)=>{
+    ctx.strokeRect(x,y,col[i],56);
+    ctx.textAlign=(i===2 || i===3)?'left':'center';
+    ctx.fillText(h,(i===2 || i===3)?x+12:x+col[i]/2,y+35);
+    x+=col[i];
+  });
+  y+=56;
+
+  ctx.font='16px Arial';
+  const list=selected.length ? selected : [{no:'-',nama:'Belum ada pekerja dipilih'}];
+  list.forEach((w,i)=>{
+    const rh=rowHeights[i] || 58;
+    x=left;
+    ctx.fillStyle=i%2?'#fbfdff':'#ffffff';
+    ctx.fillRect(left,y,right-left,rh);
+    ctx.fillStyle='#1f2937';
+    const values=[String(selected.length?i+1:'-'),w.no,w.nama,selected.length?kegiatan:'-',selected.length?upah:'-'];
+    values.forEach((value,c)=>{
+      ctx.strokeStyle='#d7e0ec';
+      ctx.strokeRect(x,y,col[c],rh);
+      ctx.textAlign=(c===2 || c===3)?'left':'center';
+      if(c===3){
+        wrapText(ctx,value,x+12,y+27,col[c]-24,22);
+      }else{
+        ctx.fillText(value,(c===2)?x+12:x+col[c]/2,y+35);
+      }
+      x+=col[c];
+    });
+    y+=rh;
+  });
+
+  ctx.fillStyle='#eef3ff';
+  ctx.fillRect(left,y,right-left,58);
+  ctx.strokeStyle='#d7e0ec';
+  ctx.strokeRect(left,y,right-left,58);
+  const totalLabelWidth=col[0]+col[1]+col[2]+col[3];
+  ctx.beginPath(); ctx.moveTo(left+totalLabelWidth,y); ctx.lineTo(left+totalLabelWidth,y+58); ctx.stroke();
+  ctx.fillStyle='#334155';
+  ctx.font='bold 18px Arial';
+  ctx.textAlign='right';
+  ctx.fillText('Total Upah Lembur',left+totalLabelWidth-16,y+36);
+  ctx.textAlign='center';
+  ctx.fillText(totalUpah,left+totalLabelWidth+col[4]/2,y+36);
+  y+=58;
+
+  return canvas;
+}
+/* ===== FIX iOS CANVAS ===== */
+function canvasToBlob(canvas){
+  return new Promise(resolve=>{
+    if(canvas.toBlob){
+      canvas.toBlob(resolve,'image/png',1);
+    }else{
+      const dataURL = canvas.toDataURL('image/png');
+      const byteString = atob(dataURL.split(',')[1]);
+      const mimeString = dataURL.split(',')[0].split(':')[1].split(';')[0];
+      const ab = new ArrayBuffer(byteString.length);
+      const ia = new Uint8Array(ab);
+      for (let i = 0; i < byteString.length; i++) ia[i] = byteString.charCodeAt(i);
+      resolve(new Blob([ab], {type: mimeString}));
+    }
+  });
+}
+
+/* ===== SHARE OPTIMIZED ===== */
+async function shareWA(){
+  const canvas = reportToCanvas();
+  const text = buildShareText();
+
+  await new Promise(r=>setTimeout(r,300));
+
+  const blob = await canvasToBlob(canvas);
+  const file = new File([blob],'laporan_lembur.png',{type:'image/png'});
+
+  try{
+    if(navigator.canShare && navigator.canShare({files:[file]})){
+      await navigator.share({files:[file],title:'Laporan Lembur',text:text});
+      return;
+    }
+  }catch(e){}
+
+  try{
+    if(navigator.share){
+      await navigator.share({title:'Laporan Lembur',text:text});
+      showToast('Share text (mode fallback)');
+      return;
+    }
+  }catch(e){}
+
+  try{
+    await navigator.clipboard.writeText(text);
+    showToast('Disalin. Paste ke WhatsApp');
+    return;
+  }catch(e){}
+
+  window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank');
+}
+
+function hideSplash(){
+  const splash=qs('appSplash');
+  if(!splash) return;
+  splash.classList.add('hide');
+  setTimeout(()=>{ splash.style.display='none'; }, 400);
+}
+
+function initApp(){
+  if(!qs('tanggal').value) setTanggalHariIni();
+  installSheetDismissed=localStorage.getItem('laporanLemburHideInstallPrompt')==='1';
+
+  qs('btnTambahPekerja').onclick=addWorker;
+  qs('btnClearTambah').onclick=clearTambah;
+  qs('editSelect').onchange=fillEditForm;
+  qs('btnUpdatePekerja').onclick=updateWorker;
+  qs('btnDeletePekerja').onclick=deleteWorker;
+  qs('btnClearEdit').onclick=clearEdit;
+  qs('btnReset').onclick=resetForm;
+  qs('btnInstallApp').onclick=triggerInstallPrompt;
+  qs('btnDismissInstall').onclick=()=>dismissInstallUI(true);
+  qs('btnDismissInstallTop').onclick=()=>dismissInstallUI(true);
+  qs('btnInlineInstall').onclick=triggerInstallPrompt;
+
+  qs('workerTable').addEventListener('click',e=>{
+    const btn=e.target.closest('button[data-action]');
+    if(!btn) return;
+    const index=Number(btn.dataset.index);
+    setSelected(index, btn.dataset.action === 'add');
+  });
+
+  ['tanggal','jamAwal','jamAkhir','istirahat','kegiatan'].forEach(id=>{
+    qs(id).addEventListener('input',()=>{
+      if(id==='jamAwal' || id==='jamAkhir') normalizeTimeInput(qs(id));
+      renderReport();
+    });
+  });
+
+  qs('btnSimpan').onclick=()=>{
+    if(!validateBeforeShare()) return;
+    if(confirm('Yakin input sudah sesuai?')) shareWA();
+  };
+
+  renderWorkers();
+  if(isStandaloneMode()) dismissInstallUI(true);
+  else if(canShowInstallUI() && deferredInstallPrompt) setInstallSheetVisible(true);
+  setTimeout(hideSplash, 1050);
+}
+
+document.addEventListener('DOMContentLoaded', initApp);
+window.addEventListener('load', ()=>setTimeout(hideSplash, 1250));
+</script>
+</body>
+</html>
