@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
-  <title>Laporan Lembur Unit Cleaning Umum</title>
+  <title>Aplikasi Lembur BIP</title>
   <style>
     :root{
       --bg:#eef3f9;--panel:#ffffff;--ink:#172033;--muted:#65758b;--line:#d9e3f1;--line-strong:#bdcbe0;
@@ -20,6 +20,7 @@
     .hero-brand{display:flex;align-items:center;gap:16px;margin-bottom:14px;position:relative;z-index:1}.hero-logo{width:68px;height:68px;border-radius:18px;background:rgba(255,255,255,.96);padding:8px;box-shadow:0 12px 28px rgba(12,28,69,.22);object-fit:contain;flex:0 0 auto}.hero-brand-text{display:flex;flex-direction:column;gap:4px}.hero-brand-text small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.74);font-weight:900}.hero-brand-text strong{font-size:19px;line-height:1.2;color:#fff;font-weight:900}
     .hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px;position:relative;z-index:1}.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);padding:9px 13px;border-radius:999px;font-size:13px;font-weight:800}
     .app-splash{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at top left,#d5e4ff 0,#edf4ff 28%,#f5f8fe 62%,#e8f0ff 100%);z-index:9999;transition:opacity .45s ease,visibility .45s ease;overflow:hidden}.app-splash.hide{opacity:0;visibility:hidden}.app-splash-orb{position:absolute;border-radius:50%;filter:blur(8px);opacity:.72;animation:floatOrb 7s ease-in-out infinite}.app-splash-orb.a{width:220px;height:220px;left:-50px;top:-40px;background:rgba(37,88,217,.18)}.app-splash-orb.b{width:190px;height:190px;right:-35px;top:90px;background:rgba(16,185,129,.12);animation-delay:-2s}.app-splash-orb.c{width:160px;height:160px;right:12%;bottom:-40px;background:rgba(245,158,11,.12);animation-delay:-4s}.app-splash-card{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;min-width:min(90vw,390px);padding:34px 28px 28px;border-radius:34px;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.9));border:1px solid rgba(188,202,221,.75);box-shadow:0 28px 68px rgba(20,38,72,.18), inset 0 1px 0 rgba(255,255,255,.75);backdrop-filter:blur(10px)}.app-splash-card::before{content:'';position:absolute;inset:1px;pointer-events:none;border-radius:33px;border:1px solid rgba(255,255,255,.55)}.app-splash-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(37,88,217,.08);color:#2558d9;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.app-splash-kicker::before{content:'';width:8px;height:8px;border-radius:50%;background:#2558d9;box-shadow:0 0 0 6px rgba(37,88,217,.14)}.app-splash-logo-shell{position:relative;width:142px;height:142px;display:flex;align-items:center;justify-content:center}.app-splash-logo-ring{position:absolute;inset:0;border-radius:40px;background:conic-gradient(from 0deg,#2558d9,#65a2ff,#7dd3fc,#2558d9);filter:drop-shadow(0 14px 22px rgba(37,88,217,.22));animation:spin 6s linear infinite}.app-splash-logo-ring::after{content:'';position:absolute;inset:10px;border-radius:34px;background:rgba(255,255,255,.98)}.app-splash-logo{position:relative;z-index:1;width:96px;height:96px;object-fit:contain;border-radius:28px;background:#fff;padding:8px;box-shadow:0 12px 22px rgba(37,88,217,.12)}.app-splash-title{font-size:28px;font-weight:900;color:#20355b;text-align:center;letter-spacing:.2px}.app-splash-sub{max-width:310px;font-size:13px;font-weight:800;color:#64748b;text-align:center;line-height:1.65}.app-splash-progress{width:min(82%,290px);height:10px;border-radius:999px;background:#dce8ff;overflow:hidden;box-shadow:inset 0 1px 2px rgba(20,38,72,.08)}.app-splash-progress span{display:block;width:42%;height:100%;border-radius:999px;background:linear-gradient(90deg,#2558d9,#65a2ff,#8bc5ff);animation:progressMove 1.5s ease-in-out infinite}.app-splash-foot{font-size:12px;font-weight:900;color:#8292aa;letter-spacing:.12em;text-transform:uppercase;text-align:center}.install-sheet{position:fixed;left:50%;bottom:16px;transform:translateX(-50%) translateY(18px);width:min(94vw,460px);z-index:80;opacity:0;pointer-events:none;transition:.28s ease}.install-sheet.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}.install-sheet-card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,255,.98));border:1px solid rgba(188,202,221,.8);box-shadow:0 22px 48px rgba(20,38,72,.16);border-radius:24px;padding:18px 18px 16px;backdrop-filter:blur(10px)}.install-sheet-top{display:flex;gap:14px;align-items:center}.install-sheet-logo{width:56px;height:56px;object-fit:contain;border-radius:18px;background:#fff;padding:6px;box-shadow:0 10px 18px rgba(37,88,217,.12);flex:0 0 auto}.install-sheet-text small{display:block;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#2558d9;margin-bottom:4px}.install-sheet-text strong{display:block;font-size:18px;line-height:1.2;color:#20355b}.install-sheet-text p{margin:6px 0 0;color:#64748b;font-size:12px;line-height:1.55;font-weight:700}.install-points{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 12px}.install-point{background:#f6f9ff;border:1px solid #dde8fb;border-radius:16px;padding:11px 12px;font-size:12px;color:#3d4f6a;font-weight:800}.install-point b{display:block;font-size:13px;color:#20355b;margin-bottom:3px}.install-sheet-actions{display:flex;gap:10px}.install-sheet-actions .btn{flex:1}.install-sheet-close{position:absolute;right:14px;top:14px;width:32px;height:32px;border-radius:12px;border:1px solid #d7e3f7;background:#fff;color:#50647f;font-weight:900;cursor:pointer}.report-brand{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;margin-bottom:12px}.report-brand-logo-wrap{width:86px;height:86px;border-radius:24px;background:linear-gradient(180deg,#ffffff,#f5f9ff);border:1px solid #dbe6f7;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(37,88,217,.10)}.report-brand-logo{width:58px;height:58px;object-fit:contain}.report-brand-label{font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#6b7f9d}.app-inline-install{display:none}.app-inline-install.show{display:inline-flex}@keyframes spin{to{transform:rotate(360deg)}}@keyframes progressMove{0%{transform:translateX(-70%)}50%{transform:translateX(90%)}100%{transform:translateX(230%)}}@keyframes floatOrb{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.05)}}
+    .login-screen{position:fixed;inset:0;z-index:9000;display:flex;align-items:center;justify-content:center;padding:18px;background:radial-gradient(circle at top left,#d5e4ff 0,#edf4ff 32%,#f5f8fe 62%,#e8f0ff 100%)}.login-screen.hide{display:none}.login-card{width:min(94vw,460px);background:rgba(255,255,255,.96);border:1px solid rgba(188,202,221,.8);border-radius:30px;box-shadow:0 28px 68px rgba(20,38,72,.18);padding:24px}.login-brand{display:flex;align-items:center;gap:14px;margin-bottom:18px}.login-logo{width:62px;height:62px;border-radius:18px;background:#fff;padding:7px;box-shadow:0 12px 22px rgba(37,88,217,.12);object-fit:contain}.login-brand small{display:block;color:#2558d9;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}.login-brand strong{display:block;font-size:20px;color:#20355b;line-height:1.2}.login-card h2{font-size:24px;margin:0 0 8px;color:#172033}.login-card p{margin:0 0 16px;color:#64748b;font-size:13px;line-height:1.6;font-weight:700}.login-field{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}.login-field label{font-size:12px;font-weight:900;color:#334155}.login-field input{width:100%;border:1px solid #cfdbec;border-radius:16px;padding:13px 14px;font-size:15px;background:#f8fbff;outline:none}.login-field input:focus{border-color:#2558d9;box-shadow:0 0 0 4px rgba(37,88,217,.12);background:#fff}.login-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.login-help{margin-top:14px;padding:12px;border-radius:16px;background:#f5f8ff;border:1px solid #dde8fb;color:#52637a;font-size:12px;font-weight:800;line-height:1.55}.mode-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;border:1px solid rgba(188,202,221,.8);border-radius:20px;padding:12px 14px;margin:-4px 0 16px;box-shadow:0 10px 26px rgba(20,38,72,.07)}.mode-title{font-size:13px;font-weight:900;color:#20355b}.mode-title span{color:#2558d9}.mode-note{font-size:12px;color:#65758b;font-weight:800}.role-worker .admin-only{display:none!important}.role-worker .hero-badges .worker-hidden{display:none!important}.role-worker .hero{margin-bottom:12px}@media(max-width:560px){.login-actions{grid-template-columns:1fr}.mode-bar{flex-direction:column;align-items:stretch}.mode-bar .btn{width:100%}}
     .workspace{display:flex;flex-direction:column;gap:18px}.frame{border-radius:28px;padding:16px;border:1px solid rgba(188,202,221,.55);box-shadow:var(--shadow);position:relative;overflow:hidden}.frame:before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--frame-accent)}
     .frame.worker{--frame-accent:var(--worker-accent);background:linear-gradient(135deg,#f7fbff 0%,var(--worker-bg) 100%)}.frame.data{--frame-accent:var(--data-accent);background:linear-gradient(135deg,#fbfffc 0%,var(--data-bg) 100%)}.frame.report-frame{--frame-accent:var(--report-accent);background:linear-gradient(135deg,#fffdf8 0%,var(--report-bg) 100%)}
     .frame-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin:8px 4px 16px}.frame-kicker{font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:var(--frame-accent)}.frame-head h2{margin:3px 0 5px;font-size:22px;font-weight:900}.frame-head p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}.frame-number{width:42px;height:42px;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--frame-accent);font-weight:900;box-shadow:0 10px 24px rgba(20,38,72,.09);border:1px solid rgba(188,202,221,.55)}
@@ -32,7 +33,7 @@
     .btn{appearance:none;border:0;border-radius:14px;padding:11px 14px;font-size:14px;font-weight:900;cursor:pointer;transition:transform .12s ease,box-shadow .2s ease,opacity .2s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{transform:translateY(-1px)}.btn:disabled{cursor:not-allowed;opacity:.45;transform:none;box-shadow:none}.btn.add{background:rgba(21,128,61,.12);color:var(--success);border:1px solid rgba(21,128,61,.18)}.btn.del{background:rgba(192,57,43,.10);color:var(--danger);border:1px solid rgba(192,57,43,.15)}.btn.primary{background:linear-gradient(180deg,var(--primary),var(--primary-2));color:#fff;box-shadow:0 10px 18px rgba(37,88,217,.22)}.btn.secondary{background:#eef3f9;color:#334155;border:1px solid var(--line)}.btn.warning{background:rgba(245,158,11,.12);color:#92400e;border:1px solid rgba(245,158,11,.25)}.btn.save{padding:14px 16px;font-size:16px;flex:2}.btn.reset{flex:1}.form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.form-actions .btn{flex:1;min-width:130px}.selected-pill{display:inline-flex;align-items:center;gap:8px;background:#fff5df;border:1px solid #ffe0a3;color:#a85e00;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:900}
     .report-shell{background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:22px;padding:16px;display:flex;justify-content:flex-start;align-items:flex-start;overflow:auto;max-height:75vh;max-width:100%;-webkit-overflow-scrolling:touch}.report-sheet{background:#fff;border:1px solid #c7d3e6;border-radius:10px;overflow:hidden;box-shadow:0 8px 24px rgba(20,38,72,.08);width:100%;min-width:980px;max-width:none;display:inline-block}.report-header{padding:24px 18px 20px;text-align:center;background:linear-gradient(180deg,#f7faff,#edf4ff);border-bottom:1px solid #d8e4f4}.report-title{font-size:28px;font-weight:900;letter-spacing:.4px;margin:0;color:#20355b}.report-sub{font-size:17px;margin-top:8px;color:#4b607c;font-weight:900;letter-spacing:.4px}.report-info{display:grid;grid-template-columns:190px 1fr}.report-info div{padding:14px 16px;border-bottom:1px solid #d8e1ee;font-size:16px;line-height:1.45}.report-info .label{background:#f4f7fb;font-weight:900;color:#334155;border-right:1px solid #d8e1ee}.report-table{width:100%;border-collapse:collapse}.report-table th,.report-table td{border:1px solid #d7e0ec;padding:12px 10px;font-size:15px;line-height:1.45;color:#1f2937;vertical-align:top}.report-table th{background:#eef3ff;font-weight:900;font-size:14px;color:#334155}.report-table td:nth-child(1),.report-table td:nth-child(2),.report-table th:nth-child(1),.report-table th:nth-child(2){text-align:center}.report-table tbody tr:nth-child(even){background:#fbfdff}.empty{padding:20px!important;text-align:center;color:#64748b;font-weight:800;font-size:15px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}.help-note,.footer-note{margin-top:12px;color:var(--muted);font-size:12px;line-height:1.5}.footer-note{padding:12px 14px;border-radius:14px;background:#f8fbff;border:1px dashed #cfdcf1;color:#50647f}.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#172033;color:#fff;padding:12px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:.2s;z-index:20;box-shadow:0 10px 24px rgba(0,0,0,.25);font-size:13px;font-weight:800;max-width:92vw;text-align:center}.toast.show{opacity:1}
     @media(max-width:920px){.two-col,.data-grid{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr 1fr}}
-    @media(max-width:560px){body{padding:10px 10px 28px}.hero{padding:20px 16px;border-radius:24px}.hero h1{font-size:21px}.hero-brand{gap:12px;align-items:flex-start}.hero-logo{width:58px;height:58px;border-radius:16px;padding:7px}.hero-brand-text strong{font-size:17px}.app-splash-card{padding:24px 18px 22px;border-radius:26px;min-width:min(92vw,380px)}.app-splash-logo-shell{width:118px;height:118px}.app-splash-logo{width:82px;height:82px;border-radius:22px}.app-splash-title{font-size:24px}.app-splash-kicker{font-size:11px;padding:8px 12px}.install-sheet{width:min(95vw,420px);bottom:12px}.install-sheet-card{padding:16px 14px 14px;border-radius:22px}.install-sheet-top{align-items:flex-start}.install-sheet-logo{width:52px;height:52px;border-radius:16px}.install-sheet-text strong{font-size:16px}.install-points{grid-template-columns:1fr}.install-sheet-actions{flex-direction:column}.report-brand-logo-wrap{width:72px;height:72px;border-radius:20px}.report-brand-logo{width:50px;height:50px}.frame{padding:13px;border-radius:24px}.frame-head{margin:8px 2px 14px}.frame-head h2{font-size:19px}.frame-number{width:38px;height:38px;border-radius:14px}.card-head,.card-body{padding:14px}.field-grid{grid-template-columns:1fr}.summary{grid-template-columns:1fr}.worker-control{flex-direction:column}.control-col{width:120px}.report-title{font-size:20px}.report-sub{font-size:13px}.report-info{grid-template-columns:120px 1fr}.report-info div{padding:11px 12px;font-size:13px}.report-table th,.report-table td{padding:9px 7px;font-size:12px}thead th,tbody td{padding:10px 8px;font-size:12px}.actions,.form-actions{flex-direction:column}.btn.save,.btn.reset,.form-actions .btn{width:100%}}
+    @media(max-width:560px){.db-card{grid-template-columns:1fr}.db-actions{justify-content:stretch}.db-actions .btn{flex:1}body{padding:10px 10px 28px}.hero{padding:20px 16px;border-radius:24px}.hero h1{font-size:21px}.hero-brand{gap:12px;align-items:flex-start}.hero-logo{width:58px;height:58px;border-radius:16px;padding:7px}.hero-brand-text strong{font-size:17px}.app-splash-card{padding:24px 18px 22px;border-radius:26px;min-width:min(92vw,380px)}.app-splash-logo-shell{width:118px;height:118px}.app-splash-logo{width:82px;height:82px;border-radius:22px}.app-splash-title{font-size:24px}.app-splash-kicker{font-size:11px;padding:8px 12px}.install-sheet{width:min(95vw,420px);bottom:12px}.install-sheet-card{padding:16px 14px 14px;border-radius:22px}.install-sheet-top{align-items:flex-start}.install-sheet-logo{width:52px;height:52px;border-radius:16px}.install-sheet-text strong{font-size:16px}.install-points{grid-template-columns:1fr}.install-sheet-actions{flex-direction:column}.report-brand-logo-wrap{width:72px;height:72px;border-radius:20px}.report-brand-logo{width:50px;height:50px}.frame{padding:13px;border-radius:24px}.frame-head{margin:8px 2px 14px}.frame-head h2{font-size:19px}.frame-number{width:38px;height:38px;border-radius:14px}.card-head,.card-body{padding:14px}.field-grid{grid-template-columns:1fr}.summary{grid-template-columns:1fr}.worker-control{flex-direction:column}.control-col{width:120px}.report-title{font-size:20px}.report-sub{font-size:13px}.report-info{grid-template-columns:120px 1fr}.report-info div{padding:11px 12px;font-size:13px}.report-table th,.report-table td{padding:9px 7px;font-size:12px}thead th,tbody td{padding:10px 8px;font-size:12px}.actions,.form-actions{flex-direction:column}.btn.save,.btn.reset,.form-actions .btn{width:100%}}
 
     /* Mobile worker list: no horizontal scroll; Add/Del always visible */
     @media(max-width:640px){
@@ -51,6 +52,21 @@
       #workerTable .worker-control{display:grid;grid-template-columns:1fr 1fr;gap:8px;justify-content:stretch}
       #workerTable .worker-control .btn{width:100%;min-height:42px;padding:10px 12px}
     }
+
+    /* Admin tabs & laporan absensi */
+    .worker-only{display:none!important}.role-worker .worker-only{display:inline-flex!important}.role-admin .worker-only{display:none!important}
+    .admin-tabs{display:none;gap:10px;flex-wrap:wrap;margin:-6px 0 16px;align-items:center;background:#fff;border:1px solid rgba(188,202,221,.8);border-radius:20px;padding:10px;box-shadow:0 10px 26px rgba(20,38,72,.07)}
+    .role-admin .admin-tabs{display:flex}.admin-tab-btn{border:1px solid var(--line);background:#f6f9ff;color:#334155;border-radius:999px;padding:10px 16px;font-size:13px;font-weight:900;cursor:pointer}
+    .admin-tab-btn.active{background:linear-gradient(180deg,var(--primary),var(--primary-2));border-color:transparent;color:#fff;box-shadow:0 10px 18px rgba(37,88,217,.18)}
+    .role-admin.absensi-active #mainWorkspace{display:none}.admin-absensi-frame{display:none}.role-admin.absensi-active .admin-absensi-frame{display:block}
+    .absensi-filter{display:grid;grid-template-columns:minmax(180px,260px) auto 1fr;gap:12px;align-items:end}.absensi-status{font-size:12px;font-weight:900;color:#64748b;line-height:1.5}
+    .absensi-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}.absensi-summary .stat{background:#f8fbff;border:1px solid #dde8fb}
+    .attendance-list{display:flex;flex-direction:column;gap:12px;margin-top:12px}.attendance-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 10px 24px rgba(20,38,72,.07);overflow:hidden}
+    .attendance-card-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 16px;background:linear-gradient(180deg,#f8fbff,#f2f7ff);border-bottom:1px solid var(--line)}
+    .attendance-title{font-weight:900;color:#20355b}.attendance-meta{font-size:12px;color:#64748b;font-weight:800;line-height:1.55}.attendance-wage{font-weight:900;color:#15803d}.attendance-body{padding:14px 16px}
+    .attendance-info{display:grid;grid-template-columns:140px 1fr;gap:8px 12px;font-size:13px;line-height:1.45;margin-bottom:12px}.attendance-info b{color:#334155}.attendance-workers{width:100%;border-collapse:collapse}.attendance-workers th,.attendance-workers td{border:1px solid #d7e0ec;padding:9px 8px;font-size:12px;text-align:left}.attendance-workers th{background:#eef3ff;color:#334155;font-weight:900}.attendance-workers td:first-child,.attendance-workers td:nth-child(2),.attendance-workers th:first-child,.attendance-workers th:nth-child(2){text-align:center}
+    @media(max-width:640px){.absensi-filter{grid-template-columns:1fr}.absensi-summary{grid-template-columns:1fr 1fr}.attendance-info{grid-template-columns:1fr}.attendance-card-head{flex-direction:column}.admin-tabs .admin-tab-btn{flex:1}}
+
   </style>
 
 <link rel="manifest" href="manifest.json">
@@ -108,26 +124,83 @@ if ('serviceWorker' in navigator) {
     </div>
   </div>
 </div>
+<div class="login-screen" id="loginScreen" aria-live="polite">
+  <div class="login-card">
+    <div class="login-brand">
+      <img src="icons/icon-512.png" alt="Logo aplikasi" class="login-logo">
+      <div><small>Login Aplikasi</small><strong>Aplikasi Lembur BIP</strong></div>
+    </div>
+    <div class="login-field">
+      <label for="adminPassword">Password Admin</label>
+      <input id="adminPassword" type="password" autocomplete="current-password" placeholder="Masukkan password admin">
+    </div>
+    <div class="login-actions">
+      <button type="button" class="btn primary" id="btnLoginAdmin">Login Admin</button>
+      <button type="button" class="btn secondary" id="btnLoginWorker">Masuk Halaman Pekerja</button>
+    </div>
+  </div>
+</div>
 <div class="wrap">
+  <div class="mode-bar" id="modeBar" style="display:none">
+    <div><div class="mode-title">Mode: <span id="modeLabel">-</span></div><div class="mode-note" id="modeNote">-</div></div>
+    <div class="mode-actions"><button type="button" class="btn secondary worker-only" id="btnBackWorker">Kembali</button><button type="button" class="btn secondary" id="btnLogout">Logout</button></div>
+  </div>
   <section class="hero">
     <div class="hero-brand">
       <img src="icons/icon-512.png" alt="Logo aplikasi" class="hero-logo">
       <div class="hero-brand-text">
-        <strong>Laporan Lembur Unit Cleaning Umum</strong>
+        <strong>Aplikasi Lembur BIP</strong>
       </div>
     </div>
-    <h1>Laporan Lembur Unit Cleaning Umum</h1>
-    
     <div class="hero-badges">
-      <div class="badge">1–2 Kelola Pekerja</div>
+      <div class="badge worker-hidden">1–2 Kelola Pekerja</div>
       <div class="badge">3–4 Input Lembur</div>
       <div class="badge">5 Form Laporan</div>
       <button type="button" class="badge app-inline-install" id="btnInlineInstall">Install Android</button>
     </div>
+    <div class="db-card admin-only" aria-live="polite">
+      <div>
+        <div class="db-title">Database</div>
+        <div class="db-status" id="dbStatusText"><span class="db-dot off" id="dbStatusDot"></span>Mode lokal aman<small>Isi firebase-config.js untuk mengaktifkan sinkron database Firestore.</small></div>
+      </div>
+      <div class="db-actions">
+        <button type="button" class="btn db" id="btnSyncCloud">Sync Database</button>
+        <button type="button" class="btn db secondary" id="btnBackupJson">Backup JSON</button>
+      </div>
+    </div>
   </section>
 
-  <main class="workspace">
-    <section class="frame worker">
+  <div class="admin-tabs admin-only" id="adminTabs" aria-label="Tab Admin">
+    <button type="button" class="admin-tab-btn active" id="tabPekerja">Pekerja & Input Lembur</button>
+    <button type="button" class="admin-tab-btn" id="tabAbsensi">Absensi</button>
+  </div>
+
+  <section class="frame admin-absensi-frame admin-only" id="adminAbsensiFrame">
+    <div class="frame-head">
+      <div><div class="frame-kicker">Admin</div><h2>Tab Absensi - Laporan Lembur Masuk</h2></div>
+      <div class="frame-number">A</div>
+    </div>
+    <section class="card">
+      <div class="card-head"><h2>Laporan Absensi Lembur</h2><span>Pilih tanggal lalu tampilkan laporan yang sudah tersimpan</span></div>
+      <div class="card-body">
+        <div class="absensi-filter">
+          <div class="field"><label for="absensiTanggal">Pilih Tanggal</label><input id="absensiTanggal" type="date"></div>
+          <button type="button" class="btn primary" id="btnTampilkanAbsensi">Tampilkan</button>
+          <div class="absensi-status" id="absensiStatus">Pilih tanggal untuk melihat laporan lembur yang sudah masuk.</div>
+        </div>
+        <div class="absensi-summary" id="absensiSummary" style="display:none">
+          <div class="stat"><div class="num" id="absensiTotalLaporan">0</div><div class="lbl">Laporan</div></div>
+          <div class="stat"><div class="num" id="absensiTotalPekerja">0</div><div class="lbl">Pekerja</div></div>
+          <div class="stat"><div class="num" id="absensiTotalJam">0</div><div class="lbl">Total Jam</div></div>
+          <div class="stat"><div class="num" id="absensiTotalUpah">Rp 0</div><div class="lbl">Total Upah</div></div>
+        </div>
+        <div class="attendance-list" id="absensiList"></div>
+      </div>
+    </section>
+  </section>
+
+  <main class="workspace" id="mainWorkspace">
+    <section class="frame worker admin-only">
       <div class="frame-head">
         <div><div class="frame-kicker">Frame 1</div><h2>Kelola Data Pekerja</h2></div>
         <div class="frame-number">1–2</div>
@@ -163,6 +236,20 @@ if ('serviceWorker' in navigator) {
           </div>
         </section>
       </div>
+      <section class="card admin-password-card admin-only">
+        <div class="card-head"><h2>Ubah Password Admin</h2><span>Password tersimpan di database</span></div>
+        <div class="card-body">
+          <div class="field-grid">
+            <div class="field"><label for="oldAdminPassword">Password Lama</label><input id="oldAdminPassword" type="password" autocomplete="current-password" placeholder="Password lama"></div>
+            <div class="field"><label for="newAdminPassword">Password Baru</label><input id="newAdminPassword" type="password" autocomplete="new-password" placeholder="Minimal 4 karakter"></div>
+            <div class="field"><label for="confirmAdminPassword">Ulangi Password Baru</label><input id="confirmAdminPassword" type="password" autocomplete="new-password" placeholder="Ulangi password baru"></div>
+          </div>
+          <div class="form-actions">
+            <button class="btn primary" id="btnChangeAdminPassword">Simpan Password Baru</button>
+          </div>
+          <div class="login-help" id="adminPasswordStatus">Password admin siap digunakan.</div>
+        </div>
+      </section>
     </section>
 
     <section class="frame data">
@@ -230,6 +317,12 @@ if ('serviceWorker' in navigator) {
 </div>
 <div class="toast" id="toast"></div>
 
+<script type="module">
+import { createLemburDatabase } from './firebase-db.js';
+window.LemburDB = createLemburDatabase();
+window.LemburDBReady = window.LemburDB.init();
+</script>
+
 <script>
 const defaultWorkers=[
  ['1200','Matheus Umbu'],['1201','Pratama Reynaldi A'],['1202','Ari Febrianto'],['1203','M Arsyi Al Fazr'],
@@ -245,6 +338,149 @@ const appLogo=new Image();
 appLogo.src='icons/icon-512.png';
 let deferredInstallPrompt=null;
 let installSheetDismissed=false;
+const DEFAULT_ADMIN_PASSWORD='admin123';
+let adminPasswordHash=localStorage.getItem('laporanLemburAdminPasswordHash') || '';
+let currentRole=localStorage.getItem('laporanLemburRole') || '';
+
+
+async function hashPassword(text){
+  const value=String(text || '');
+  if(window.crypto && crypto.subtle && window.TextEncoder){
+    const data=new TextEncoder().encode(value);
+    const hash=await crypto.subtle.digest('SHA-256', data);
+    return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('');
+  }
+  // Fallback untuk browser lama. Tetap hanya menyimpan bentuk hash, bukan teks password asli.
+  let h=0;
+  for(let i=0;i<value.length;i++) h=((h<<5)-h)+value.charCodeAt(i) | 0;
+  return 'legacy-'+Math.abs(h).toString(16);
+}
+
+function setPasswordStatus(text){
+  const el=qs('adminPasswordStatus');
+  if(el) el.textContent=text;
+}
+
+async function saveAdminPasswordHashToDatabase(){
+  try{
+    localStorage.setItem('laporanLemburAdminPasswordHash', adminPasswordHash);
+    if(window.LemburDB && window.LemburDB.enabled && window.LemburDB.saveAdminSettings){
+      await window.LemburDB.saveAdminSettings({ passwordHash: adminPasswordHash });
+      setPasswordStatus('Password admin tersimpan di database Firestore.');
+    }else{
+      setPasswordStatus('Password admin tersimpan di penyimpanan lokal. Aktifkan Firebase agar tersimpan di database Firestore.');
+    }
+  }catch(e){
+    console.warn('Gagal simpan password admin:', e);
+    setPasswordStatus('Password tersimpan lokal, tetapi gagal sinkron ke database.');
+  }
+}
+
+async function initAdminPassword(){
+  try{
+    if(window.LemburDB && window.LemburDB.enabled && window.LemburDB.loadAdminSettings){
+      const settings=await window.LemburDB.loadAdminSettings();
+      if(settings && settings.passwordHash){
+        adminPasswordHash=String(settings.passwordHash);
+        localStorage.setItem('laporanLemburAdminPasswordHash', adminPasswordHash);
+        setPasswordStatus('Password admin dimuat dari database Firestore.');
+        return;
+      }
+    }
+    if(!adminPasswordHash){
+      adminPasswordHash=await hashPassword(DEFAULT_ADMIN_PASSWORD);
+      await saveAdminPasswordHashToDatabase();
+    }else{
+      await saveAdminPasswordHashToDatabase();
+    }
+  }catch(e){
+    console.warn('Gagal inisialisasi password admin:', e);
+    if(!adminPasswordHash){
+      adminPasswordHash=await hashPassword(DEFAULT_ADMIN_PASSWORD);
+      localStorage.setItem('laporanLemburAdminPasswordHash', adminPasswordHash);
+    }
+    setPasswordStatus('Password admin memakai penyimpanan lokal karena database belum siap.');
+  }
+}
+
+async function verifyAdminPassword(password){
+  const hash=await hashPassword(password);
+  return hash === adminPasswordHash;
+}
+
+async function changeAdminPassword(){
+  const oldPass=(qs('oldAdminPassword')?.value || '').trim();
+  const newPass=(qs('newAdminPassword')?.value || '').trim();
+  const confirmPass=(qs('confirmAdminPassword')?.value || '').trim();
+  if(!oldPass || !newPass || !confirmPass){
+    showToast('Lengkapi password lama dan password baru.');
+    return;
+  }
+  if(!(await verifyAdminPassword(oldPass))){
+    showToast('Password lama salah.');
+    qs('oldAdminPassword')?.focus();
+    return;
+  }
+  if(newPass.length < 4){
+    showToast('Password baru minimal 4 karakter.');
+    qs('newAdminPassword')?.focus();
+    return;
+  }
+  if(newPass !== confirmPass){
+    showToast('Konfirmasi password baru tidak sama.');
+    qs('confirmAdminPassword')?.focus();
+    return;
+  }
+  adminPasswordHash=await hashPassword(newPass);
+  await saveAdminPasswordHashToDatabase();
+  ['oldAdminPassword','newAdminPassword','confirmAdminPassword','adminPassword'].forEach(id=>{ if(qs(id)) qs(id).value=''; });
+  showToast('Password admin berhasil diubah.');
+}
+
+function applyRole(role){
+  currentRole=role;
+  document.body.classList.toggle('role-admin', role==='admin');
+  document.body.classList.toggle('role-worker', role==='worker');
+  const login=qs('loginScreen');
+  const modeBar=qs('modeBar');
+  const modeLabel=qs('modeLabel');
+  const modeNote=qs('modeNote');
+  if(login) login.classList.toggle('hide', role==='admin' || role==='worker');
+  if(modeBar) modeBar.style.display=(role==='admin' || role==='worker')?'flex':'none';
+  if(modeLabel) modeLabel.textContent=role==='admin'?'Admin':'Pekerja';
+  if(modeNote) modeNote.textContent=role==='admin' ? 'Semua halaman aktif.' : '';
+  if(qs('btnLogout')) qs('btnLogout').style.display=role==='admin'?'inline-flex':'none';
+  if(role==='admin') setAdminTab('pekerja');
+  if(role!=='admin') document.body.classList.remove('absensi-active');
+  const firstVisible=document.querySelector(role==='worker'?'.frame.data':'.frame.worker');
+  if(firstVisible) setTimeout(()=>firstVisible.scrollIntoView({behavior:'smooth',block:'start'}),120);
+}
+
+async function loginAdmin(){
+  const pass=(qs('adminPassword')?.value || '').trim();
+  if(!(await verifyAdminPassword(pass))){
+    showToast('Password admin salah.');
+    qs('adminPassword')?.focus();
+    return;
+  }
+  localStorage.setItem('laporanLemburRole','admin');
+  applyRole('admin');
+  showToast('Login admin berhasil.');
+}
+
+function loginWorker(){
+  localStorage.setItem('laporanLemburRole','worker');
+  applyRole('worker');
+  showToast('Masuk halaman pekerja.');
+}
+
+function logoutRole(){
+  localStorage.removeItem('laporanLemburRole');
+  if(qs('adminPassword')) qs('adminPassword').value='';
+  applyRole('');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
 
 function loadWorkers(){
   try{
@@ -263,6 +499,256 @@ function loadWorkers(){
 
 function saveWorkers(){
   localStorage.setItem('laporanLemburWorkers',JSON.stringify(workers));
+  saveWorkersToCloud();
+}
+
+function setDbStatus(text, mode='off', detail=''){
+  const status=qs('dbStatusText');
+  const dot=qs('dbStatusDot');
+  if(!status || !dot) return;
+  dot.className='db-dot '+mode;
+  status.innerHTML=`<span class="db-dot ${mode}" id="dbStatusDot"></span>${escapeHTML(text)}${detail?`<small>${escapeHTML(detail)}</small>`:''}`;
+}
+
+async function initDatabaseLayer(){
+  try{
+    if(!window.LemburDBReady){
+      setDbStatus('Mode lokal aman','off','Modul database belum dimuat.');
+      return;
+    }
+    const db=await window.LemburDBReady;
+    if(!db || !db.enabled){
+      setDbStatus('Mode lokal aman','off','Isi firebase-config.js lalu set enabled: true untuk sinkron Firestore.');
+      return;
+    }
+    setDbStatus('Firebase Firestore aktif','ok','Data pekerja dan laporan akan disinkronkan ke database.');
+    const cloudWorkers=await window.LemburDB.loadWorkers();
+    if(Array.isArray(cloudWorkers) && cloudWorkers.length){
+      // Firebase menjadi sumber data utama saat tersedia.
+      // Tidak lagi menampilkan popup konfirmasi setiap aplikasi dibuka.
+      workers=cloudWorkers.map(w=>({no:String(w.no),nama:String(w.nama),selected:!!w.selected}));
+      localStorage.setItem('laporanLemburWorkers',JSON.stringify(workers));
+      setDbStatus('Firebase Firestore aktif','ok','Data pekerja otomatis dimuat dari database.');
+    }else{
+      await window.LemburDB.saveWorkers(workers);
+      setDbStatus('Firebase Firestore aktif','ok','Database kosong, data pekerja lokal dikirim ke Firestore.');
+    }
+  }catch(e){
+    console.warn('Database init gagal:', e);
+    setDbStatus('Mode lokal aman','err','Koneksi database gagal. Aplikasi tetap berjalan memakai penyimpanan lokal.');
+  }
+}
+
+async function saveWorkersToCloud(){
+  try{
+    if(window.LemburDB && window.LemburDB.enabled){
+      await window.LemburDB.saveWorkers(workers);
+    }
+  }catch(e){
+    console.warn('Gagal sync pekerja:', e);
+    setDbStatus('Mode lokal aman','err','Gagal sinkron pekerja ke Firestore. Data lokal tetap tersimpan.');
+  }
+}
+
+function buildReportRecord(){
+  const calc=calculateOvertime();
+  const selected=selectedWorkers();
+  return {
+    tanggal: qs('tanggal').value || '',
+    kategori: qs('kategori').value || 'Cleaning Umum',
+    jamAwal: qs('jamAwal').value || '',
+    jamAkhir: qs('jamAkhir').value || '',
+    istirahatMenit: calc.rest,
+    durasiJam: Number(calc.hours.toFixed(2)),
+    upahPerJam: OVERTIME_RATE,
+    upahPerPekerja: calc.wage,
+    totalUpah: calc.wage * selected.length,
+    kegiatan: qs('kegiatan').value.trim(),
+    pekerja: selected.map(w=>({no:String(w.no), nama:String(w.nama)})),
+    textLaporan: buildShareText(),
+    source: 'pwa_lembur_bip'
+  };
+}
+
+function loadLocalReports(){
+  try{
+    const raw=localStorage.getItem('laporanLemburReports');
+    const data=raw ? JSON.parse(raw) : [];
+    return Array.isArray(data) ? data : [];
+  }catch(e){
+    return [];
+  }
+}
+
+function saveReportToLocal(record){
+  const reports=loadLocalReports();
+  const safeRecord={
+    ...record,
+    localId:'local_'+Date.now()+'_'+Math.random().toString(16).slice(2),
+    createdAtLocal:new Date().toISOString()
+  };
+  reports.unshift(safeRecord);
+  localStorage.setItem('laporanLemburReports', JSON.stringify(reports.slice(0,500)));
+  return safeRecord;
+}
+
+function localReportsByDate(dateValue){
+  return loadLocalReports().filter(r=>String(r && r.tanggal || '') === String(dateValue || ''));
+}
+
+async function saveReportToCloud(){
+  const record=buildReportRecord();
+  saveReportToLocal(record);
+  try{
+    if(window.LemburDB && window.LemburDB.enabled){
+      await window.LemburDB.saveReport(record);
+      showToast('Laporan tersimpan ke database.');
+    }
+  }catch(e){
+    console.warn('Gagal simpan laporan ke database:', e);
+    showToast('Database gagal menyimpan laporan, tetapi share tetap dilanjutkan.');
+  }
+}
+
+async function manualSyncCloud(){
+  try{
+    if(!window.LemburDBReady) throw new Error('Modul database belum siap.');
+    await window.LemburDBReady;
+    if(!window.LemburDB || !window.LemburDB.enabled){
+      showToast('Database belum aktif. Isi firebase-config.js terlebih dahulu.');
+      return;
+    }
+    await window.LemburDB.saveWorkers(workers);
+    setDbStatus('Firebase Firestore aktif','ok','Data pekerja lokal berhasil disinkronkan.');
+    showToast('Data pekerja berhasil disinkronkan ke database.');
+  }catch(e){
+    console.warn(e);
+    setDbStatus('Mode lokal aman','err','Sync database gagal. Cek konfigurasi Firebase/rules.');
+    showToast('Sync database gagal. Data lokal tetap aman.');
+  }
+}
+
+function backupJson(){
+  const payload={
+    aplikasi:'pwa_lembur_bip',
+    versi:'firebase-db-no-confirm-v3',
+    exportedAt:new Date().toISOString(),
+    pekerja:workers,
+    laporanTersimpan:loadLocalReports(),
+    draftLaporan:buildReportRecord()
+  };
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+  downloadBlob(blob, `backup_lembur_bip_${new Date().toISOString().slice(0,10)}.json`);
+  showToast('Backup JSON berhasil dibuat.');
+}
+
+
+function setAdminTab(tab){
+  const isAbsensi=tab === 'absensi';
+  document.body.classList.toggle('absensi-active', isAbsensi);
+  if(qs('tabPekerja')) qs('tabPekerja').classList.toggle('active', !isAbsensi);
+  if(qs('tabAbsensi')) qs('tabAbsensi').classList.toggle('active', isAbsensi);
+  if(isAbsensi){
+    const dateInput=qs('absensiTanggal');
+    if(dateInput && !dateInput.value) dateInput.value=qs('tanggal')?.value || new Date().toISOString().slice(0,10);
+    setTimeout(()=>qs('adminAbsensiFrame')?.scrollIntoView({behavior:'smooth',block:'start'}),80);
+  }else{
+    setTimeout(()=>qs('mainWorkspace')?.scrollIntoView({behavior:'smooth',block:'start'}),80);
+  }
+}
+
+function createdAtNumber(value){
+  if(!value) return 0;
+  if(typeof value === 'string') return new Date(value).getTime() || 0;
+  if(typeof value === 'number') return value;
+  if(typeof value.toDate === 'function') return value.toDate().getTime() || 0;
+  if(value.seconds) return Number(value.seconds) * 1000;
+  return 0;
+}
+
+async function loadReportsByDate(dateValue){
+  let reports=[];
+  let fromDb=false;
+  try{
+    if(window.LemburDBReady) await window.LemburDBReady;
+    if(window.LemburDB && window.LemburDB.enabled && window.LemburDB.loadReportsByDate){
+      reports=await window.LemburDB.loadReportsByDate(dateValue);
+      fromDb=true;
+    }
+  }catch(e){
+    console.warn('Gagal memuat laporan dari database:', e);
+    fromDb=false;
+  }
+  if(!fromDb){
+    reports=localReportsByDate(dateValue);
+  }
+  reports=(Array.isArray(reports)?reports:[]).filter(r=>String(r && r.tanggal || '') === String(dateValue || ''));
+  reports.sort((a,b)=>createdAtNumber(b.createdAt || b.createdAtLocal)-createdAtNumber(a.createdAt || a.createdAtLocal));
+  return {reports, fromDb};
+}
+
+function reportCreatedLabel(record){
+  const raw=record.createdAtLocal || record.createdAt;
+  let date=null;
+  if(typeof raw === 'string') date=new Date(raw);
+  else if(raw && typeof raw.toDate === 'function') date=raw.toDate();
+  else if(raw && raw.seconds) date=new Date(Number(raw.seconds)*1000);
+  if(!date || Number.isNaN(date.getTime())) return '-';
+  return date.toLocaleString('id-ID',{dateStyle:'short',timeStyle:'short'});
+}
+
+function renderAbsensiReports(reports, fromDb){
+  const list=qs('absensiList');
+  const summary=qs('absensiSummary');
+  const status=qs('absensiStatus');
+  if(!list || !summary || !status) return;
+  const totalLaporan=reports.length;
+  const totalPekerja=reports.reduce((sum,r)=>sum+(Array.isArray(r.pekerja)?r.pekerja.length:0),0);
+  const totalJam=reports.reduce((sum,r)=>sum+(Number(r.durasiJam)||0)*(Array.isArray(r.pekerja)?r.pekerja.length:0),0);
+  const totalUpah=reports.reduce((sum,r)=>sum+(Number(r.totalUpah)||0),0);
+  qs('absensiTotalLaporan').textContent=String(totalLaporan);
+  qs('absensiTotalPekerja').textContent=String(totalPekerja);
+  qs('absensiTotalJam').textContent=totalJam.toLocaleString('id-ID',{maximumFractionDigits:2});
+  qs('absensiTotalUpah').textContent=formatRupiah(totalUpah);
+  summary.style.display='grid';
+  status.textContent=fromDb ? 'Data ditampilkan dari Firebase Firestore.' : 'Data ditampilkan dari penyimpanan lokal perangkat ini.';
+  if(!reports.length){
+    list.innerHTML='<div class="empty">Belum ada laporan lembur masuk pada tanggal ini.</div>';
+    return;
+  }
+  list.innerHTML=reports.map((r,idx)=>{
+    const pekerja=Array.isArray(r.pekerja)?r.pekerja:[];
+    const rows=pekerja.length ? pekerja.map((w,i)=>`<tr><td>${i+1}</td><td>${escapeHTML(w.no || '-')}</td><td>${escapeHTML(w.nama || '-')}</td><td>${escapeHTML(formatRupiah(r.upahPerPekerja || 0))}</td></tr>`).join('') : '<tr><td colspan="4" class="empty">Tidak ada detail pekerja.</td></tr>';
+    return `<article class="attendance-card">
+      <div class="attendance-card-head">
+        <div><div class="attendance-title">Laporan ${idx+1} - ${escapeHTML(formatDateID(r.tanggal || ''))}</div><div class="attendance-meta">Masuk: ${escapeHTML(reportCreatedLabel(r))}</div></div>
+        <div class="attendance-wage">${escapeHTML(formatRupiah(r.totalUpah || 0))}</div>
+      </div>
+      <div class="attendance-body">
+        <div class="attendance-info">
+          <b>Jam</b><span>${escapeHTML(r.jamAwal || '-')} s.d ${escapeHTML(r.jamAkhir || '-')}</span>
+          <b>Istirahat</b><span>${escapeHTML(String(r.istirahatMenit ?? 0))} Menit</span>
+          <b>Durasi</b><span>${escapeHTML(formatDuration(r.durasiJam || 0))}</span>
+          <b>Kegiatan</b><span>${escapeHTML(r.kegiatan || '-')}</span>
+        </div>
+        <table class="attendance-workers"><thead><tr><th>No</th><th>No Absen</th><th>Nama Pekerja</th><th>Upah</th></tr></thead><tbody>${rows}</tbody></table>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+async function tampilkanAbsensi(){
+  const input=qs('absensiTanggal');
+  const status=qs('absensiStatus');
+  const list=qs('absensiList');
+  if(!input || !input.value){
+    showToast('Pilih tanggal absensi terlebih dahulu.');
+    return;
+  }
+  if(status) status.textContent='Memuat laporan...';
+  if(list) list.innerHTML='';
+  const {reports, fromDb}=await loadReportsByDate(input.value);
+  renderAbsensiReports(reports, fromDb);
 }
 
 function showToast(msg){
@@ -473,8 +959,8 @@ function renderReport(){
   const istirahatLabel=`${calc.rest} Menit`;
 
   const rows=selected.length
-    ? selected.map((w,i)=>`<tr><td>${i+1}</td><td>${escapeHTML(w.no)}</td><td>${escapeHTML(w.nama)}</td><td>${escapeHTML(kegiatan)}</td><td>${escapeHTML(upah)}</td></tr>`).join('')
-    : '<tr><td colspan="5" class="empty">Belum ada pekerja dipilih</td></tr>';
+    ? selected.map((w,i)=>`<tr><td>${i+1}</td><td>${escapeHTML(w.no)}</td><td>${escapeHTML(w.nama)}</td><td>${escapeHTML(upah)}</td></tr>`).join('')
+    : '<tr><td colspan="4" class="empty">Belum ada pekerja dipilih</td></tr>';
 
   qs('report').innerHTML=`
     <div class="report-header">
@@ -496,9 +982,9 @@ function renderReport(){
       <div class="label">Kegiatan</div><div>${escapeHTML(kegiatan)}</div>
     </div>
     <table class="report-table">
-      <thead><tr><th style="width:60px">No</th><th style="width:120px">No Absen</th><th>Nama Pekerja</th><th>Kegiatan</th><th style="width:150px">Upah Lembur</th></tr></thead>
+      <thead><tr><th style="width:60px">No</th><th style="width:120px">No Absen</th><th>Nama Pekerja</th><th style="width:150px">Upah Lembur</th></tr></thead>
       <tbody>${rows}</tbody>
-      <tfoot><tr><th colspan="4" style="text-align:right">Total Upah Lembur</th><th>${escapeHTML(totalUpah)}</th></tr></tfoot>
+      <tfoot><tr><th colspan="3" style="text-align:right">Total Upah Lembur</th><th>${escapeHTML(totalUpah)}</th></tr></tfoot>
     </table>`;
 }
 function setSelected(index, value){
@@ -640,6 +1126,10 @@ function buildShareText(){
     selected.forEach(w=>lines.push(String(w.no)));
   }
 
+  lines.push('');
+  lines.push('*KEGIATAN*');
+  lines.push(qs('kegiatan').value.trim() || '-');
+
   return lines.join('\n');
 }
 
@@ -674,7 +1164,8 @@ function roundedRect(ctx,x,y,w,h,r){
 
 function reportToCanvas(){
   const selected=selectedWorkers();
-  const scale=2;
+  // Scale tinggi agar hasil gambar PNG tetap tajam/HD saat disimpan atau dibagikan ke WhatsApp.
+  const scale=4;
   const width=980;
   const kegiatan=qs('kegiatan').value || '-';
   const calc=calculateOvertime();
@@ -687,7 +1178,7 @@ function reportToCanvas(){
   const infoRows=8;
   const kegiatanInfoHeight=Math.max(62, kegiatanLines*30 + 24);
   const infoHeight=(52*(infoRows-1)) + kegiatanInfoHeight;
-  const rowHeights=(selected.length ? selected : [{no:'-',nama:'Belum ada pekerja dipilih'}]).map(()=>Math.max(58, kegiatanLines*24 + 18));
+  const rowHeights=(selected.length ? selected : [{no:'-',nama:'Belum ada pekerja dipilih'}]).map(()=>58);
   const headerHeight=188;
   const height=headerHeight + infoHeight + 56 + rowHeights.reduce((a,b)=>a+b,0) + 58 + 92;
 
@@ -769,8 +1260,8 @@ function reportToCanvas(){
     y+=h;
   });
 
-  const col=[58,110,245,342,175];
-  const headers=['No','No Absen','Nama Pekerja','Kegiatan','Upah Lembur'];
+  const col=[70,150,470,240];
+  const headers=['No','No Absen','Nama Pekerja','Upah Lembur'];
   ctx.fillStyle='#eef3ff';
   ctx.fillRect(left,y,right-left,56);
   ctx.strokeStyle='#d7e0ec';
@@ -779,8 +1270,8 @@ function reportToCanvas(){
   ctx.fillStyle='#334155';
   headers.forEach((h,i)=>{
     ctx.strokeRect(x,y,col[i],56);
-    ctx.textAlign=(i===2 || i===3)?'left':'center';
-    ctx.fillText(h,(i===2 || i===3)?x+12:x+col[i]/2,y+35);
+    ctx.textAlign=(i===2)?'left':'center';
+    ctx.fillText(h,(i===2)?x+12:x+col[i]/2,y+35);
     x+=col[i];
   });
   y+=56;
@@ -793,16 +1284,12 @@ function reportToCanvas(){
     ctx.fillStyle=i%2?'#fbfdff':'#ffffff';
     ctx.fillRect(left,y,right-left,rh);
     ctx.fillStyle='#1f2937';
-    const values=[String(selected.length?i+1:'-'),w.no,w.nama,selected.length?kegiatan:'-',selected.length?upah:'-'];
+    const values=[String(selected.length?i+1:'-'),w.no,w.nama,selected.length?upah:'-'];
     values.forEach((value,c)=>{
       ctx.strokeStyle='#d7e0ec';
       ctx.strokeRect(x,y,col[c],rh);
-      ctx.textAlign=(c===2 || c===3)?'left':'center';
-      if(c===3){
-        wrapText(ctx,value,x+12,y+27,col[c]-24,22);
-      }else{
-        ctx.fillText(value,(c===2)?x+12:x+col[c]/2,y+35);
-      }
+      ctx.textAlign=(c===2)?'left':'center';
+      ctx.fillText(value,(c===2)?x+12:x+col[c]/2,y+35);
       x+=col[c];
     });
     y+=rh;
@@ -812,14 +1299,14 @@ function reportToCanvas(){
   ctx.fillRect(left,y,right-left,58);
   ctx.strokeStyle='#d7e0ec';
   ctx.strokeRect(left,y,right-left,58);
-  const totalLabelWidth=col[0]+col[1]+col[2]+col[3];
+  const totalLabelWidth=col[0]+col[1]+col[2];
   ctx.beginPath(); ctx.moveTo(left+totalLabelWidth,y); ctx.lineTo(left+totalLabelWidth,y+58); ctx.stroke();
   ctx.fillStyle='#334155';
   ctx.font='bold 18px Arial';
   ctx.textAlign='right';
   ctx.fillText('Total Upah Lembur',left+totalLabelWidth-16,y+36);
   ctx.textAlign='center';
-  ctx.fillText(totalUpah,left+totalLabelWidth+col[4]/2,y+36);
+  ctx.fillText(totalUpah,left+totalLabelWidth+col[3]/2,y+36);
   y+=58;
 
   return canvas;
@@ -841,10 +1328,23 @@ function canvasToBlob(canvas){
   });
 }
 
+
+function downloadBlob(blob, filename){
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download=filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url), 1000);
+}
+
 /* ===== SHARE OPTIMIZED ===== */
 async function shareWA(){
   const canvas = reportToCanvas();
   const text = buildShareText();
+  await saveReportToCloud();
 
   await new Promise(r=>setTimeout(r,300));
 
@@ -858,17 +1358,19 @@ async function shareWA(){
     }
   }catch(e){}
 
+  downloadBlob(blob,'laporan_lembur_hd.png');
+
   try{
     if(navigator.share){
       await navigator.share({title:'Laporan Lembur',text:text});
-      showToast('Share text (mode fallback)');
+      showToast('Gambar HD diunduh. Share text (mode fallback).');
       return;
     }
   }catch(e){}
 
   try{
     await navigator.clipboard.writeText(text);
-    showToast('Disalin. Paste ke WhatsApp');
+    showToast('Gambar HD diunduh. Text disalin, paste ke WhatsApp.');
     return;
   }catch(e){}
 
@@ -882,7 +1384,9 @@ function hideSplash(){
   setTimeout(()=>{ splash.style.display='none'; }, 400);
 }
 
-function initApp(){
+async function initApp(){
+  await initDatabaseLayer();
+  await initAdminPassword();
   if(!qs('tanggal').value) setTanggalHariIni();
   installSheetDismissed=localStorage.getItem('laporanLemburHideInstallPrompt')==='1';
 
@@ -897,6 +1401,18 @@ function initApp(){
   qs('btnDismissInstall').onclick=()=>dismissInstallUI(true);
   qs('btnDismissInstallTop').onclick=()=>dismissInstallUI(true);
   qs('btnInlineInstall').onclick=triggerInstallPrompt;
+  qs('btnSyncCloud').onclick=manualSyncCloud;
+  qs('btnBackupJson').onclick=backupJson;
+  qs('btnChangeAdminPassword').onclick=changeAdminPassword;
+  qs('btnLoginAdmin').onclick=loginAdmin;
+  qs('btnLoginWorker').onclick=loginWorker;
+  qs('btnLogout').onclick=logoutRole;
+  if(qs('btnBackWorker')) qs('btnBackWorker').onclick=logoutRole;
+  if(qs('tabPekerja')) qs('tabPekerja').onclick=()=>setAdminTab('pekerja');
+  if(qs('tabAbsensi')) qs('tabAbsensi').onclick=()=>setAdminTab('absensi');
+  if(qs('btnTampilkanAbsensi')) qs('btnTampilkanAbsensi').onclick=tampilkanAbsensi;
+  qs('adminPassword').addEventListener('keydown', e=>{ if(e.key==='Enter') loginAdmin(); });
+  applyRole(currentRole);
 
   qs('workerTable').addEventListener('click',e=>{
     const btn=e.target.closest('button[data-action]');

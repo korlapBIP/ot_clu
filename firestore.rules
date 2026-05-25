@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Mode aman untuk PWA statis: hanya user yang sudah login anonymous Firebase
+    // yang bisa membaca/menulis data aplikasi lembur.
+    // Aktifkan Firebase Authentication > Anonymous sebelum memakai rules ini.
+    match /lembur_bip/{document=**} {
+      allow read, write: if request.auth != null;
+    }
+
+    // Semua path lain tetap tertutup.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

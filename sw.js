@@ -1,8 +1,11 @@
-const CACHE_NAME = "lembur-v10";
+const CACHE_NAME = "lembur-v15-admin-absensi-back";
 const urlsToCache = [
   "./",
   "./index.html",
   "./manifest.json",
+  "./firebase-config.js",
+  "./firebase-db.js",
+  "./README_DATABASE_FIREBASE.md",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./screenshots/install-dashboard.png",
